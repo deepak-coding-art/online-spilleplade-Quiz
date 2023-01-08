@@ -1,0 +1,380 @@
+:root {
+  --blue-bg: #8ae9ffff;
+  --blue-outline: #248a9cff;
+  --white-bg: #ffffff;
+  --text-color: #000000;
+  --transparent-modal: #0000006b;
+  --border-size: 5px;
+  --green-main: #77b17b;
+  --green-border: #016601;
+  --light-blue: #80cbc4;
+  --dark-blue: #0d4569;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--white-bg);
+  color: var(--text-color);
+  padding: 1rem;
+  margin: 0;
+  width: 95vw;
+  font-family: "Mochiy Pop One", sans-serif;
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+}
+
+.linear-page {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.liner-page-cont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.linear-team-container {
+  width: 95%;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1.5rem 0;
+}
+
+/* ------------------------------------------------------------ Utils ------------------------------------------------------------ */
+svg {
+  width: 100%;
+  height: auto;
+}
+
+.hideElement {
+  display: none;
+}
+
+path {
+  cursor: pointer;
+}
+
+.movable {
+  position: absolute;
+}
+
+.linear-team-name {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linear-team-name h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+.linear-move-buttons {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linear-move-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linear-add-button {
+  max-width: 8%;
+  padding: 1rem;
+}
+
+.linear-avatar {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linear-avatar img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.liner-avatar-image {
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 1;
+  user-select: none;
+}
+
+.linear-track {
+  width: 70%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linear-block {
+  width: 10%;
+  height: 100%;
+  border: solid var(--border-size) var(--blue-outline);
+  border-right: none;
+  transform: skew(-15deg);
+}
+
+.linear-finish {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-right: solid var(--border-size) var(--blue-outline);
+  background-image: url("./assets/finish-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.linear-add-team {
+  width: 10%;
+  min-width: 100px;
+}
+
+.linear-add-team h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* -------------------------------------------------------------- Hex Page -------------------------------------------------------------- */
+.hex-page {
+  width: 100%;
+  height: 95vh;
+}
+
+.hex-team-cont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hex-track {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 30px;
+  column-gap: 10px;
+}
+
+.left-hex-move svg {
+  transform: translateX(30%);
+}
+
+.right-hex-move svg {
+  transform: translateX(-30%);
+}
+
+.top-hex-move svg {
+  transform: translateY(30%);
+}
+
+.bottom-hex-move svg {
+  transform: translateY(-30%);
+}
+
+.controlsCont {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.controls {
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.hex-control-team {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+}
+
+.hex-move-buttons {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hex-move-button {
+  width: 50%;
+}
+
+.hex-teamName-cont {
+  width: 30%;
+}
+
+.hex-teamName-cont h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.hex-avatar-cont {
+  width: 30%;
+}
+
+.hex-avatar-cont img {
+  width: 100%;
+}
+
+.hex-add-team {
+  width: 30%;
+}
+
+.hex-add-team h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.hex-avatar-movable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  user-select: none;
+}
+
+/* --- Change page --- */
+.go-to-page {
+  position: absolute;
+  width: 5%;
+  min-width: 50px;
+}
+
+.go-to-linear {
+  left: 10px;
+  top: 10px;
+}
+
+.go-to-hex {
+  right: 10px;
+  top: 10px;
+}
+
+/* ---------- Modal --------- */
+.modal-cont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--transparent-modal);
+}
+
+.modal {
+  width: 50%;
+  height: 60%;
+  background-color: var(--white-bg);
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  z-index: 2;
+}
+
+.modal button {
+  width: 20%;
+  min-width: 100px;
+  font-size: 2rem;
+  border: solid 2px var(--green-border);
+  border-radius: 5px;
+  background-color: var(--green-main);
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.avatar-cont {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  overflow: auto;
+}
+
+.avatar-cont > div {
+  min-width: 100px;
+  background-color: var(--light-blue);
+  border: 1px solid var(--white-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.activeImg {
+  border: 2px solid var(--dark-blue);
+}
+
+.modal-images {
+  width: 100%;
+}
+
+@media all and (max-width: 1000px) {
+  .hex-team-cont {
+    flex-direction: column;
+  }
+  .hex-track {
+    width: 100%;
+  }
+  .controlsCont {
+    width: 100%;
+  }
+  .hex-add-team {
+    width: 15%;
+  }
+  .modal {
+    width: 80%;
+    height: 70%;
+  }
+  .modal h1 {
+    font-size: 1.5rem;
+  }
+}

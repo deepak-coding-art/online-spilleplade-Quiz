@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>online spilleplade Quiz</title>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="linear-page hideElement" id="linear-page">
+        <div class="go-to-page go-to-hex" id="go-to-hex" onclick="goToHex()">
+          <svg
+            fill="#000000"
+            width="800px"
+            height="800px"
+            viewBox="0 0 24 24"
+            id="left-circle-1"
+            data-name="Multi Color"
+            class="icon multi-color"
+            version="1.1"
+            sodipodi:docname="right-circle-1-svgrepo-com.svg"
+            inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:svg="http://www.w3.org/2000/svg"
+            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:cc="http://creativecommons.org/ns#"
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+          >
+            <defs id="defs9" />
+            <sodipodi:namedview
+              id="namedview7"
+              pagecolor="#505050"
+              bordercolor="#ffffff"
+              borderopacity="1"
+              inkscape:showpageshadow="0"
+              inkscape:pageopacity="0"
+              inkscape:pagecheckerboard="1"
+              inkscape:deskcolor="#505050"
+              showgrid="false"
+              inkscape:zoom="1.03625"
+              inkscape:cx="399.51749"
+              inkscape:cy="399.51749"
+              inkscape:window-width="1920"
+              inkscape:window-height="1009"
+              inkscape:window-x="-8"
+              inkscape:window-y="-8"
+              inkscape:window-maximized="1"
+              inkscape:current-layer="left-circle-1"
+            />
+            <title style="stroke-width: 2" id="title2">left circle_1</title>
+            <path
+              id="secondary-fill"
+              d="M21,12A9,9,0,0,1,3,12c0-.12,0-.25,0-.37a10,10,0,0,1,18,0C21,11.75,21,11.88,21,12Z"
+              style="fill: rgb(44, 169, 188); stroke-width: 2"
+            />
+            <path
+              id="primary-stroke"
+              d="M 2.9895629,12 A 9,9 0 1 0 11.989563,3 9,9 0 0 0 2.9895629,12 Z m 8.0000001,-3 3,3 -3,3"
+              style="
+                fill: none;
+                stroke: #000000;
+                stroke-width: 2;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+              "
+            />
+            <metadata id="metadata292">
+              <rdf:RDF>
+                <cc:Work rdf:about="">
+                  <dc:title>left circle_1</dc:title>
+                </cc:Work>
+              </rdf:RDF>
+            </metadata>
+          </svg>
+        </div>
+        <div class="liner-page-cont" id="liner-page-cont"></div>
+        <div
+          class="linear-add-team"
+          id="linear-add-team"
+          onclick="createTeam()"
+        >
+          <svg
+            height="800px"
+            width="800px"
+            version="1.1"
+            id="Layer_1"
+            viewBox="0 0 512 512"
+            xml:space="preserve"
+            sodipodi:docname="plus-svgrepo-com.svg"
+            inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:svg="http://www.w3.org/2000/svg"
+          >
+            <defs id="defs153" />
+            <sodipodi:namedview
+              id="namedview151"
+              pagecolor="#505050"
+              bordercolor="#ffffff"
+              borderopacity="1"
+              inkscape:showpageshadow="0"
+              inkscape:pageopacity="0"
+              inkscape:pagecheckerboard="1"
+              inkscape:deskcolor="#505050"
+              showgrid="false"
+              inkscape:zoom="1.03625"
+              inkscape:cx="399.51749"
+              inkscape:cy="399.51749"
+              inkscape:window-width="1920"
+              inkscape:window-height="1009"
+              inkscape:window-x="-8"
+              inkscape:window-y="-8"
+              inkscape:window-maximized="1"
+              inkscape:current-layer="g148"
+            />
+            <path
+              style="fill: #8ae9ff; fill-opacity: 1"
+              d="M10.199,226.457v59.086c0,11.593,9.399,20.991,20.991,20.991h153.284  c11.593,0,20.991,9.399,20.991,20.991v153.284c0,11.593,9.399,20.991,20.991,20.991h59.086c11.593,0,20.991-9.399,20.991-20.991  V327.525c0-11.593,9.399-20.991,20.991-20.991h153.284c11.593,0,20.991-9.399,20.991-20.991v-59.086  c0-11.593-9.399-20.991-20.991-20.991H327.524c-11.593,0-20.991-9.399-20.991-20.991V31.191c0-11.593-9.399-20.991-20.991-20.991  h-59.086c-11.593,0-20.991,9.399-20.991,20.991v153.284c0,11.593-9.399,20.991-20.991,20.991H31.19  C19.598,205.466,10.199,214.864,10.199,226.457z"
+              id="path140"
+            />
+            <g id="g148">
+              <path
+                style="fill: #248a9c; fill-opacity: 1"
+                d="M285.543,512h-59.086c-17.198,0-31.19-13.992-31.19-31.19V327.526   c0-5.951-4.842-10.793-10.793-10.793H31.19c-17.198,0-31.19-13.992-31.19-31.19v-59.086c0-17.198,13.992-31.19,31.19-31.19h153.284   c5.951,0,10.793-4.842,10.793-10.793V31.19c0-17.198,13.992-31.19,31.19-31.19h59.086c17.198,0,31.19,13.992,31.19,31.19v153.284   c0,5.951,4.842,10.793,10.793,10.793H480.81c17.198,0,31.19,13.992,31.19,31.19v59.086c0,17.198-13.992,31.19-31.19,31.19H327.526   c-5.951,0-10.793,4.842-10.793,10.793V480.81C316.733,498.008,302.741,512,285.543,512z M31.19,215.665   c-5.95,0-10.792,4.842-10.792,10.792v59.086c0,5.95,4.842,10.792,10.792,10.792h153.284c17.199,0,31.191,13.992,31.191,31.191   V480.81c0,5.95,4.842,10.792,10.792,10.792h59.086c5.95,0,10.792-4.842,10.792-10.792V327.526   c0-17.199,13.992-31.191,31.191-31.191H480.81c5.95,0,10.792-4.842,10.792-10.792v-59.086c0-5.95-4.842-10.792-10.792-10.792   H327.526c-17.199,0-31.191-13.992-31.191-31.191V31.19c0-5.95-4.842-10.792-10.792-10.792h-59.086   c-5.95,0-10.792,4.842-10.792,10.792v153.284c0,17.199-13.992,31.191-31.191,31.191H31.19z"
+                id="path142"
+              />
+              <path
+                style="fill: #248a9c; fill-opacity: 1"
+                d="M472.223,245.801h-95.909c-5.632,0-10.199-4.567-10.199-10.199c0-5.632,4.567-10.199,10.199-10.199   h95.909c5.632,0,10.199,4.567,10.199,10.199C482.422,241.234,477.855,245.801,472.223,245.801z"
+                id="path144"
+              />
+              <path
+                style="fill: #248a9c; fill-opacity: 1"
+                d="M345.753,245.801h-7.992c-5.632,0-10.199-4.567-10.199-10.199c0-5.632,4.567-10.199,10.199-10.199   h7.992c5.632,0,10.199,4.567,10.199,10.199C355.952,241.234,351.385,245.801,345.753,245.801z"
+                id="path146"
+              />
+            </g>
+          </svg>
+          <h1>Add new track/team/player</h1>
+        </div>
+      </div>
+      <div class="hex-page" id="hex-page">
+        <div
+          class="go-to-page go-to-linear"
+          id="go-to-linear"
+          onclick="goToLinear()"
+        >
+          <svg
+            fill="#000000"
+            width="800px"
+            height="800px"
+            viewBox="0 0 24 24"
+            id="left-circle-1"
+            data-name="Multi Color"
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon multi-color"
+          >
+            <title style="stroke-width: 2">left circle_1</title>
+            <path
+              id="secondary-fill"
+              d="M21,12A9,9,0,0,1,3,12c0-.12,0-.25,0-.37a10,10,0,0,1,18,0C21,11.75,21,11.88,21,12Z"
+              style="fill: rgb(44, 169, 188); stroke-width: 2"
+            ></path>
+            <path
+              id="primary-stroke"
+              d="M21,12a9,9,0,1,1-9-9A9,9,0,0,1,21,12ZM13,9l-3,3,3,3"
+              style="
+                fill: none;
+                stroke: rgb(0, 0, 0);
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 2;
+              "
+            ></path>
+          </svg>
+        </div>
+        <div class="hex-team-cont" id="hex-team-cont">
+          <div class="hex-track" id="hex-track">
+            <div class="hex-block"></div>
+            <div class="hex-block top-hex-move">
+              <svg
+                width="120.15148mm"
+                height="99.862328mm"
+                viewBox="0 0 120.15148 99.862328"
+                version="1.1"
+                id="hexBlock-9"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs848" />
+                <g id="layer1">
+                  <path
+                    style="
+                      fill: #c56ef9;
+                      fill-opacity: 1;
+                      stroke: #000000;
+                      stroke-width: 1.0235;
+                      stroke-linecap: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                    "
+                    id="path3208"
+                    d="M -1.0747899,-17.554884 38.521297,-18.067357 58.763156,15.967624 39.408927,50.515078 -0.18716033,51.027551 -20.429019,16.99257 Z"
+                    transform="matrix(1.49447,0.02463723,-0.03372345,1.4308316,31.911157,25.947535)"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="hex-block top-hex-move">
+              <svg
+                width="118.98615mm"
+                height="99.93116mm"
+                viewBox="0 0 118.98614 99.93116"
+                version="1.1"
+                id="hexBlock-0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs848">
+                  <pattern
+                    xlink:href="#Checkerboard"
+                    id="pattern262"
+                    patternTransform="matrix(10,0,0,10,-0.67697754,0)"
+                  />
+                  <pattern
+                    patternUnits="userSpaceOnUse"
+                    width="2"
+                    height="2"
+                    patternTransform="translate(0,0) scale(10,10)"
+                    id="Checkerboard"
+                  >
+                    <rect
+                      style="fill: black; stroke: none"
+                      x="0"
+                      y="0"
+                      width="1"
+                      height="1"
+                      id="rect2068"
+                    />
+                    <rect
+                      style="fill: black; stroke: none"
+                      x="1"
+                      y="1"
+                      width="1"
+                      height="1"
+                      id="rect2070"
+                    />
+                  </pattern>
+                </defs>
+                <rect
+                  style="
+                    fill: none;
+                    fill-opacity: 1;
+                    stroke: none;
+                    stroke-width: 1.0235;
+                    stroke-linecap: round;
+                  "
+                  id="rect408"
+                  width="60.256401"
+                  height="99.931168"
+                  x="58.729748"
+                  y="-4.5010353e-22"
+                />
+                <path
+                  id="path4579"
+                  style="
+                    fill: url(#pattern262);
+                    fill-opacity: 1;
+                    stroke: #000000;
+                    stroke-width: 1.0235;
+                    stroke-linecap: round;
+                    stroke-opacity: 1;
+                  "
+                  d="M 29.96481,0.81009987 0.52569126,49.852858 29.964299,98.895616 H 59.403418 V 0.81009987 Z"
+                />
+                <path
+                  id="path4579-6"
+                  style="
+                    fill: #ffffff;
+                    fill-opacity: 1;
+                    stroke: #000000;
+                    stroke-width: 1.0235;
+                    stroke-linecap: round;
+                    stroke-opacity: 1;
+                  "
+                  d="M 88.842026,0.81009969 118.28114,49.852858 88.842537,98.895616 H 59.403418 V 0.81009969 Z"
+                />
+              </svg>
+            </div>
+            <div class="hex-block top-hex-move">
+              <svg
+                width="120.15148mm"
+                height="99.862328mm"
+                viewBox="0 0 120.15148 99.862328"
+                version="1.1"
+                id="hexBlock-1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs848" />
+                <g id="layer1">
+                  <path
+                    style="
+                      fill: #ee4a5a;
+                      fill-opacity: 1;
+                      stroke: #000000;
+                      stroke-width: 1.0235;
+                      stroke-linecap: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                    "
+                    id="path3208"
+                    d="M -1.0747899,-17.554884 38.521297,-18.067357 58.763156,15.967624 39.408927,50.515078 -0.18716033,51.027551 -20.429019,16.99257 Z"
+                    transform="matrix(1.49447,0.02463723,-0.03372345,1.4308316,31.911157,25.947535)"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="hex-block top-hex-move"></div>
+            <div class="hex-block left-hex-move">
+              <svg
+                width="120.15148mm"
+                height="99.862328mm"
+                viewBox="0 0 120.15148 99.862328"
+                version="1.1"
+                id="hexBlock-8"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs848" />
+                <g id="layer1">
+                  <path
+                    style="
+                      fill: #fadd2b;
+                      fill-opacity: 1;
+                      stroke: #000000;
+                      stroke-width: 1.0235;
+                      stroke-linecap: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                    "
+                    id="path3208"
+                    d="M -1.0747899,-17.554884 38.521297,-18.067357 58.763156,15.967624 39.408927,50.515078 -0.18716033,51.027551 -20.429019,16.99257 Z"
+                    transform="matrix(1.49447,0.02463723,-0.03372345,1.4308316,31.911157,25.947535)"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="hex-block"></div>
+            <div class="hex-block"></div>
+            <div class="hex-block"></div>
+            <div class="hex-block right-hex-move">
+              <svg
+                width="120.15148mm"
+                height="99.862328mm"
+                viewBox="0 0 120.15148 99.862328"
+                version="1.1"
+                id="hexBlock-2"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs848" />
+                <g id="layer1">
+                  <path
+                    style="
+                      fill: #c56ef9;
+                      fill-opacity: 1;
+                      stroke: #000000;
+                      stroke-width: 1.0235;
+                      stroke-linecap: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                    "
+                    id="path3208"
+                    d="M -1.0747899,-17.554884 38.521297,-18.067357 58.763156,15.967624 39.408927,50.515078 -0.18716033,51.027551 -20.429019,16.99257 Z"
+                    transform="matrix(1.49447,0.02463723,-0.03372345,1.4308316,31.911157,25.947535)"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="hex-block left-hex-move">
+              <svg
+                width="120.15148mm"
+                height="99.862328mm"
+                viewBox="0 0 120.15148 99.862328"
+                version="1.1"
+                id="hexBlock-7"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs848" />
+                <g id="layer1">
+                  <path
+                    style="
+                      fill: #8fc54e;
+                      fill-opacity: 1;
+                      stroke: #000000;
+                      stroke-width: 1.0235;
+                      stroke-linecap: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                    "
+                    id="path3208"
+                    d="M -1.0747899,-17.554884 38.521297,-18.067357 58.763156,15.967624 39.408927,50.515078 -0.18716033,51.027551 -20.429019,16.99257 Z"
+                    transform="matrix(1.49447,0.02463723,-0.03372345,1.4308316,31.911157,25.947535)"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="hex-block"></div>
+            <div class="hex-block"></div>
+            <div class="hex-block"></div>
+            <div class="hex-block right-hex-move">
+              <svg
+                width="120.15148mm"
+                height="99.862328mm"
+                viewBox="0 0 120.15148 99.862328"
+                version="1.1"
+                id="hexBlock-3"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs848" />
+                <g id="layer1">
+                  <path
+                    style="
+                      fill: #8fc54e;
+                      fill-opacity: 1;
+                      stroke: #000000;
+                      stroke-width: 1.0235;
+                      stroke-linecap: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                    "
+                    id="path3208"
+                    d="M -1.0747899,-17.554884 38.521297,-18.067357 58.763156,15.967624 39.408927,50.515078 -0.18716033,51.027551 -20.429019,16.99257 Z"
+                    transform="matrix(1.49447,0.02463723,-0.03372345,1.4308316,31.911157,25.947535)"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="hex-block"></div>
+            <div class="hex-block bottom-hex-move">
+              <svg
+                width="120.15148mm"
+                height="99.862328mm"
+                viewBox="0 0 120.15148 99.862328"
+                version="1.1"
+                id="hexBlock-6"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs848" />
+                <g id="layer1">
+                  <path
+                    style="
+                      fill: #f7864c;
+                      fill-opacity: 1;
+                      stroke: #000000;
+                      stroke-width: 1.0235;
+                      stroke-linecap: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                    "
+                    id="path3208"
+                    d="M -1.0747899,-17.554884 38.521297,-18.067357 58.763156,15.967624 39.408927,50.515078 -0.18716033,51.027551 -20.429019,16.99257 Z"
+                    transform="matrix(1.49447,0.02463723,-0.03372345,1.4308316,31.911157,25.947535)"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="hex-block bottom-hex-move">
+              <svg
+                width="120.15148mm"
+                height="99.862328mm"
+                viewBox="0 0 120.15148 99.862328"
+                version="1.1"
+                id="hexBlock-5"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs848" />
+                <g id="layer1">
+                  <path
+                    style="
+                      fill: #f2d32d;
+                      fill-opacity: 1;
+                      stroke: #000000;
+                      stroke-width: 1.0235;
+                      stroke-linecap: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                    "
+                    id="path3208"
+                    d="M -1.0747899,-17.554884 38.521297,-18.067357 58.763156,15.967624 39.408927,50.515078 -0.18716033,51.027551 -20.429019,16.99257 Z"
+                    transform="matrix(1.49447,0.02463723,-0.03372345,1.4308316,31.911157,25.947535)"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="hex-block bottom-hex-move">
+              <svg
+                width="120.15148mm"
+                height="99.862328mm"
+                viewBox="0 0 120.15148 99.862328"
+                version="1.1"
+                id="hexBlock-4"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs848" />
+                <g id="layer1">
+                  <path
+                    style="
+                      fill: #00b6f0;
+                      fill-opacity: 1;
+                      stroke: #000000;
+                      stroke-width: 1.0235;
+                      stroke-linecap: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                    "
+                    id="path3208"
+                    d="M -1.0747899,-17.554884 38.521297,-18.067357 58.763156,15.967624 39.408927,50.515078 -0.18716033,51.027551 -20.429019,16.99257 Z"
+                    transform="matrix(1.49447,0.02463723,-0.03372345,1.4308316,31.911157,25.947535)"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="hex-block"></div>
+          </div>
+          <div class="controlsCont">
+            <div class="controls" id="controls"></div>
+            <div class="hex-add-team" id="hex-add-team" onclick="createTeam()">
+              <svg
+                height="800px"
+                width="800px"
+                version="1.1"
+                id="Layer_1"
+                viewBox="0 0 512 512"
+                xml:space="preserve"
+                sodipodi:docname="plus-svgrepo-com.svg"
+                inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs153" />
+                <sodipodi:namedview
+                  id="namedview151"
+                  pagecolor="#505050"
+                  bordercolor="#ffffff"
+                  borderopacity="1"
+                  inkscape:showpageshadow="0"
+                  inkscape:pageopacity="0"
+                  inkscape:pagecheckerboard="1"
+                  inkscape:deskcolor="#505050"
+                  showgrid="false"
+                  inkscape:zoom="1.03625"
+                  inkscape:cx="399.51749"
+                  inkscape:cy="399.51749"
+                  inkscape:window-width="1920"
+                  inkscape:window-height="1009"
+                  inkscape:window-x="-8"
+                  inkscape:window-y="-8"
+                  inkscape:window-maximized="1"
+                  inkscape:current-layer="g148"
+                />
+                <path
+                  style="fill: #8ae9ff; fill-opacity: 1"
+                  d="M10.199,226.457v59.086c0,11.593,9.399,20.991,20.991,20.991h153.284  c11.593,0,20.991,9.399,20.991,20.991v153.284c0,11.593,9.399,20.991,20.991,20.991h59.086c11.593,0,20.991-9.399,20.991-20.991  V327.525c0-11.593,9.399-20.991,20.991-20.991h153.284c11.593,0,20.991-9.399,20.991-20.991v-59.086  c0-11.593-9.399-20.991-20.991-20.991H327.524c-11.593,0-20.991-9.399-20.991-20.991V31.191c0-11.593-9.399-20.991-20.991-20.991  h-59.086c-11.593,0-20.991,9.399-20.991,20.991v153.284c0,11.593-9.399,20.991-20.991,20.991H31.19  C19.598,205.466,10.199,214.864,10.199,226.457z"
+                  id="path140"
+                />
+                <g id="g148">
+                  <path
+                    style="fill: #248a9c; fill-opacity: 1"
+                    d="M285.543,512h-59.086c-17.198,0-31.19-13.992-31.19-31.19V327.526   c0-5.951-4.842-10.793-10.793-10.793H31.19c-17.198,0-31.19-13.992-31.19-31.19v-59.086c0-17.198,13.992-31.19,31.19-31.19h153.284   c5.951,0,10.793-4.842,10.793-10.793V31.19c0-17.198,13.992-31.19,31.19-31.19h59.086c17.198,0,31.19,13.992,31.19,31.19v153.284   c0,5.951,4.842,10.793,10.793,10.793H480.81c17.198,0,31.19,13.992,31.19,31.19v59.086c0,17.198-13.992,31.19-31.19,31.19H327.526   c-5.951,0-10.793,4.842-10.793,10.793V480.81C316.733,498.008,302.741,512,285.543,512z M31.19,215.665   c-5.95,0-10.792,4.842-10.792,10.792v59.086c0,5.95,4.842,10.792,10.792,10.792h153.284c17.199,0,31.191,13.992,31.191,31.191   V480.81c0,5.95,4.842,10.792,10.792,10.792h59.086c5.95,0,10.792-4.842,10.792-10.792V327.526   c0-17.199,13.992-31.191,31.191-31.191H480.81c5.95,0,10.792-4.842,10.792-10.792v-59.086c0-5.95-4.842-10.792-10.792-10.792   H327.526c-17.199,0-31.191-13.992-31.191-31.191V31.19c0-5.95-4.842-10.792-10.792-10.792h-59.086   c-5.95,0-10.792,4.842-10.792,10.792v153.284c0,17.199-13.992,31.191-31.191,31.191H31.19z"
+                    id="path142"
+                  />
+                  <path
+                    style="fill: #248a9c; fill-opacity: 1"
+                    d="M472.223,245.801h-95.909c-5.632,0-10.199-4.567-10.199-10.199c0-5.632,4.567-10.199,10.199-10.199   h95.909c5.632,0,10.199,4.567,10.199,10.199C482.422,241.234,477.855,245.801,472.223,245.801z"
+                    id="path144"
+                  />
+                  <path
+                    style="fill: #248a9c; fill-opacity: 1"
+                    d="M345.753,245.801h-7.992c-5.632,0-10.199-4.567-10.199-10.199c0-5.632,4.567-10.199,10.199-10.199   h7.992c5.632,0,10.199,4.567,10.199,10.199C355.952,241.234,351.385,245.801,345.753,245.801z"
+                    id="path146"
+                  />
+                </g>
+              </svg>
+              <h1>Add new Team/player</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
