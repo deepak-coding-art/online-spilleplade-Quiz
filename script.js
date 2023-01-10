@@ -1,6 +1,7 @@
 const usedImages = [];
 const teams = [];
 const scores = [];
+let initial;
 
 class LinearTeam {
   constructor(name, number) {
@@ -625,3 +626,13 @@ function restartGame() {
     team.update();
   });
 }
+
+function newGame() {
+  const instance = document.getElementById("container");
+  instance.innerHTML = initial;
+}
+
+window.addEventListener("load", () => {
+  const instance = document.getElementById("container");
+  initial = instance.innerHTML;
+});
