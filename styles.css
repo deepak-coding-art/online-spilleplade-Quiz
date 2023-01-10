@@ -109,6 +109,7 @@ path {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  width: 5%;
 }
 
 .linear-avatar {
@@ -379,6 +380,7 @@ path {
   position: absolute;
   width: 5%;
   min-width: 50px;
+  z-index: 2;
 }
 
 .go-to-linear {
