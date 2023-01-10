@@ -1,8 +1,13 @@
+const usedImages = [];
+const teams = [];
+const scores = [];
+
 class LinearTeam {
   constructor(name, number) {
     this.name = name;
     this.number = number;
     this.avatarUrl = "";
+    this.id = Date.now();
     this.score = 0;
     this.maxSore = 10;
     this.otherScores = [];
@@ -47,7 +52,7 @@ class LinearTeam {
        c3.751,4.203,3.383,10.651-0.819,14.401C253.967,363.356,251.54,364.21,249.125,364.21z"
       />
     </g>
-  </svg>`;
+    </svg>`;
     this.rightSvg = `<svg
   height="800px"
   width="800px"
@@ -86,7 +91,7 @@ class LinearTeam {
      C353.663,263.645,351.237,264.498,348.82,264.498z"
     />
   </g>
-</svg>`;
+    </svg>`;
     this.addSvg = `<svg
 height="800px"
 width="800px"
@@ -144,7 +149,59 @@ xmlns:svg="http://www.w3.org/2000/svg"
     id="path146"
   />
 </g>
-</svg>`;
+    </svg>`;
+    this.addAvatarSvg = `<svg
+    height="800"
+    width="800"
+    version="1.1"
+    id="Layer_1"
+    viewBox="0 0 512 512"
+    xml:space="preserve"
+    sodipodi:docname="plus-svgrepo-com.svg"
+    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg"><defs
+    id="defs153" /><sodipodi:namedview
+    id="namedview151"
+    pagecolor="#505050"
+    bordercolor="#ffffff"
+    borderopacity="1"
+    inkscape:showpageshadow="0"
+    inkscape:pageopacity="0"
+    inkscape:pagecheckerboard="1"
+    inkscape:deskcolor="#505050"
+    showgrid="false"
+    inkscape:zoom="1.03625"
+    inkscape:cx="399.51749"
+    inkscape:cy="553.92039"
+    inkscape:window-width="1920"
+    inkscape:window-height="1009"
+    inkscape:window-x="-8"
+    inkscape:window-y="-8"
+    inkscape:window-maximized="1"
+    inkscape:current-layer="g148" />
+ <path
+    style="fill:#63dc7d;fill-opacity:1"
+    d="m 10.199,226.457 v 59.086 c 0,11.593 9.399,20.991 20.991,20.991 h 153.284 c 11.593,0 20.991,9.399 20.991,20.991 v 153.284 c 0,11.593 9.399,20.991 20.991,20.991 h 59.086 c 11.593,0 20.991,-9.399 20.991,-20.991 V 327.525 c 0,-11.593 9.399,-20.991 20.991,-20.991 h 153.284 c 11.593,0 20.991,-9.399 20.991,-20.991 v -59.086 c 0,-11.593 -9.399,-20.991 -20.991,-20.991 H 327.524 c -11.593,0 -20.991,-9.399 -20.991,-20.991 V 31.191 c 0,-11.593 -9.399,-20.991 -20.991,-20.991 h -59.086 c -11.593,0 -20.991,9.399 -20.991,20.991 v 153.284 c 0,11.593 -9.399,20.991 -20.991,20.991 H 31.19 c -11.592,0 -20.991,9.398 -20.991,20.991 z"
+    id="path140" />
+ <g
+    id="g148">
+   <path
+    style="fill:#196d2a;fill-opacity:1"
+    d="m 285.543,512 h -59.086 c -17.198,0 -31.19,-13.992 -31.19,-31.19 V 327.526 c 0,-5.951 -4.842,-10.793 -10.793,-10.793 H 31.19 C 13.992,316.733 0,302.741 0,285.543 v -59.086 c 0,-17.198 13.992,-31.19 31.19,-31.19 h 153.284 c 5.951,0 10.793,-4.842 10.793,-10.793 V 31.19 C 195.267,13.992 209.259,0 226.457,0 h 59.086 c 17.198,0 31.19,13.992 31.19,31.19 v 153.284 c 0,5.951 4.842,10.793 10.793,10.793 H 480.81 c 17.198,0 31.19,13.992 31.19,31.19 v 59.086 c 0,17.198 -13.992,31.19 -31.19,31.19 H 327.526 c -5.951,0 -10.793,4.842 -10.793,10.793 V 480.81 c 0,17.198 -13.992,31.19 -31.19,31.19 z M 31.19,215.665 c -5.95,0 -10.792,4.842 -10.792,10.792 v 59.086 c 0,5.95 4.842,10.792 10.792,10.792 h 153.284 c 17.199,0 31.191,13.992 31.191,31.191 V 480.81 c 0,5.95 4.842,10.792 10.792,10.792 h 59.086 c 5.95,0 10.792,-4.842 10.792,-10.792 V 327.526 c 0,-17.199 13.992,-31.191 31.191,-31.191 H 480.81 c 5.95,0 10.792,-4.842 10.792,-10.792 v -59.086 c 0,-5.95 -4.842,-10.792 -10.792,-10.792 H 327.526 c -17.199,0 -31.191,-13.992 -31.191,-31.191 V 31.19 c 0,-5.95 -4.842,-10.792 -10.792,-10.792 h -59.086 c -5.95,0 -10.792,4.842 -10.792,10.792 v 153.284 c 0,17.199 -13.992,31.191 -31.191,31.191 z"
+    id="path142" />
+   <path
+    style="fill:#196d2a;fill-opacity:1"
+    d="m 472.223,245.801 h -95.909 c -5.632,0 -10.199,-4.567 -10.199,-10.199 0,-5.632 4.567,-10.199 10.199,-10.199 h 95.909 c 5.632,0 10.199,4.567 10.199,10.199 0,5.632 -4.567,10.199 -10.199,10.199 z"
+    id="path144" />
+   <path
+    style="fill:#196d2a;fill-opacity:1"
+    d="m 345.753,245.801 h -7.992 c -5.632,0 -10.199,-4.567 -10.199,-10.199 0,-5.632 4.567,-10.199 10.199,-10.199 h 7.992 c 5.632,0 10.199,4.567 10.199,10.199 0,5.632 -4.567,10.199 -10.199,10.199 z"
+    id="path146" />
+ </g>
+    </svg>`;
   }
 
   create(container, containerHex) {
@@ -190,7 +247,8 @@ xmlns:svg="http://www.w3.org/2000/svg"
     this.addAvatarButton = document.createElement("div");
     this.addAvatarButton.setAttribute("class", "linear-add-button");
     this.addAvatarButton.setAttribute("id", `linear-add-button-${this.number}`);
-    this.addAvatarButton.innerHTML = this.addSvg;
+    this.addAvatarButton.innerHTML = `${this.addAvatarSvg} Add avatar`;
+    this.addAvatarButton.style.display = "flex";
     // Add to parent
     this.teamContainer.appendChild(this.addAvatarButton);
 
@@ -231,6 +289,15 @@ xmlns:svg="http://www.w3.org/2000/svg"
     }
     // Add to parent
     this.teamContainer.appendChild(this.raceTrackContainer);
+
+    // 👷‍♂️ Create delete button for team ❌
+    this.linearDelTem = document.createElement("div");
+    this.linearDelTem.setAttribute("class", "del-element");
+    this.linearDelTem.addEventListener("click", () => {
+      this.remove();
+    });
+    this.linearDelTem.innerHTML = "X";
+    this.teamContainer.appendChild(this.linearDelTem);
 
     container.appendChild(this.teamContainer);
 
@@ -279,24 +346,34 @@ xmlns:svg="http://www.w3.org/2000/svg"
     // Img tag 🖼️
     this.hexAvatar = document.createElement("img");
     // Add to parent
-    this.hexAvatarContainer.innerHTML = `${this.addSvg} Add avatar`;
+    this.hexAvatarContainer.innerHTML = `${this.addAvatarSvg} Add avatar`;
     this.hexControlTeamCont.appendChild(this.hexAvatarContainer);
-    // {TODO: Add src while adding avatar}
+
+    this.hexDelTem = document.createElement("div");
+    this.hexDelTem.setAttribute("class", "del-element");
+    this.hexDelTem.addEventListener("click", () => {
+      this.remove();
+    });
+    this.hexDelTem.innerHTML = "X";
+    this.hexControlTeamCont.appendChild(this.hexDelTem);
 
     containerHex.appendChild(this.hexControlTeamCont);
 
     this.getHexBlocks();
 
+    this.hexAvatarMovableCont = document.createElement("div");
+    this.hexAvatarMovableCont.setAttribute("class", "hex-avatar-movable-cont");
     this.hexAvatarMovable = document.createElement("img");
     this.hexAvatarMovable.setAttribute("class", "hex-avatar-movable");
-    const pos = this.hexBlocks[0].getBoundingClientRect();
-    this.hexAvatarMovable.style.top = `${pos.top}px`;
-    this.hexAvatarMovable.style.left = `${pos.left}px`;
-    this.hexAvatarMovable.style.width = `${
-      pos.width / (this.otherScores.length + 1)
-    }px`;
-
-    this.hexControlTeamCont.appendChild(this.hexAvatarMovable);
+    const avatarCont = document.getElementById(`imgCont-${this.score}`);
+    this.hexAvatarMovableCont.appendChild(this.hexAvatarMovable);
+    avatarCont.appendChild(this.hexAvatarMovableCont);
+    // const pos = this.hexBlocks[0].getBoundingClientRect();
+    // this.hexAvatarMovable.style.top = `${pos.top}px`;
+    // this.hexAvatarMovable.style.left = `${pos.left}px`;
+    // this.hexAvatarMovable.style.width = `${
+    //   pos.width / (this.otherScores.length + 1)
+    // }px`;
 
     // Event listeners
     this.rightMoveButton.addEventListener("click", () => {
@@ -352,7 +429,7 @@ xmlns:svg="http://www.w3.org/2000/svg"
     this.hexAvatarContainer.appendChild(this.hexAvatar);
     this.hexAvatar.setAttribute("src", this.avatarUrl);
     this.hexAvatarMovable.setAttribute("src", this.avatarUrl);
-    this.addAvatarButton.classList.add("hideElement");
+    this.addAvatarButton.style.display = "none";
   }
 
   increaseScore() {
@@ -374,43 +451,31 @@ xmlns:svg="http://www.w3.org/2000/svg"
       this.score = this.maxSore;
     } else if (this.score === 0) {
       this.avatar.style.position = "static";
-      return;
     } else if (this.score < 0) {
       this.score = 0;
-      return;
     }
     this.update();
   }
 
   update() {
-    if (this.score > 0) {
-      const position = this.blocksArray[this.score - 1].getBoundingClientRect();
-
-      const hexPosition =
-        this.hexBlocks[this.score > 9 ? 0 : this.score].getBoundingClientRect();
-
-      console.log(
-        hexPosition.height /
-          (this.otherScores.length <= 0 ? 1 : this.otherScores.length)
-      );
-
-      this.hexAvatarMovable.style.top = `${hexPosition.top}px`;
-      this.hexAvatarMovable.style.left = `${hexPosition.left}px`;
-      this.hexAvatarMovable.style.width = "100px";
-      this.hexAvatarMovable.style.maxHeight = `${
-        hexPosition.height /
-        (this.otherScores.length <= 0 ? 1 : this.otherScores.length)
-      }px`;
-      this.hexAvatarMovable.style.maxWidth = `${
-        hexPosition.width /
-        (this.otherScores.length <= 0 ? 1 : this.otherScores.length)
-      }px`;
-
-      console.log(this.hexAvatarMovable);
-
-      this.avatar.style.width = `${position.width * 0.8}px`;
-      this.avatar.style.left = `${position.left + 10}px`;
+    analysesScore();
+    if (this.score === 0) {
+      this.avatar.style.position = "static";
     }
+    const position =
+      this.blocksArray[
+        this.score <= 0 ? 0 : this.score - 1
+      ].getBoundingClientRect();
+
+    const avatarCont = document.getElementById(
+      `imgCont-${this.score >= 10 ? 10 : this.score}`
+    );
+    this.hexAvatarMovableCont.parentNode.removeChild(this.hexAvatarMovableCont);
+    avatarCont.appendChild(this.hexAvatarMovableCont);
+
+    this.avatar.style.width = `${position.width * 0.9}px`;
+    this.avatar.style.left = `${position.left + 10}px`;
+    this.avatar.style.transform = `translateY(-20%)`;
 
     this.hexTeamName.innerHTML = this.name;
     this.teamName.innerHTML = this.name;
@@ -442,8 +507,18 @@ xmlns:svg="http://www.w3.org/2000/svg"
       img.setAttribute("class", "modal-images");
       img.setAttribute("src", `./assets/avatars/${i}.png`);
       imgCont.appendChild(img);
-      images.push(imgCont);
-      imageCont.appendChild(imgCont);
+      const used = usedImages.indexOf(i);
+      if (used >= 0) {
+        const pos = imgCont.getBoundingClientRect();
+        const cover = document.createElement("div");
+        cover.setAttribute("class", "uActive");
+
+        imgCont.appendChild(cover);
+        imageCont.appendChild(imgCont);
+      } else {
+        images.push(imgCont);
+        imageCont.appendChild(imgCont);
+      }
     }
 
     images.forEach((img) => {
@@ -458,6 +533,7 @@ xmlns:svg="http://www.w3.org/2000/svg"
     button.innerHTML = "OK";
     button.addEventListener("click", () => {
       this.avatarUrl = `./assets/avatars/${this.activeImg}.png`;
+      usedImages.push(this.activeImg);
       this.addAvatar();
       this.removeModal();
     });
@@ -481,12 +557,32 @@ xmlns:svg="http://www.w3.org/2000/svg"
     const container = document.getElementById("container");
     container.removeChild(container.lastChild);
   }
+
+  remove() {
+    usedImages.splice(usedImages.indexOf(this.activeImg), 1);
+    const containerHex = document.getElementById("controls");
+    const containerLiner = document.getElementById("liner-page-cont");
+    containerLiner.removeChild(this.teamContainer);
+    containerHex.removeChild(this.hexControlTeamCont);
+    this.hexAvatarMovableCont.parentNode.removeChild(this.hexAvatarMovableCont);
+    let index = 0;
+    teams.forEach((team, i) => {
+      if ((team.id = this.id)) {
+        index = i;
+      }
+    });
+    teams.splice(index, 1);
+  }
 }
 
-const teams = [];
+function analysesScore() {
+  teams.forEach((team, index) => {
+    scores[index] = team.score;
+  });
+}
 
 function createTeam() {
-  const team = new LinearTeam(`Team ${teams.length}`, teams.length);
+  const team = new LinearTeam(`add name`, teams.length);
   const cont = document.getElementById("liner-page-cont");
   const hCont = document.getElementById("controls");
   team.create(cont, hCont);
@@ -519,6 +615,13 @@ function goToHex() {
 
 function updateUi() {
   teams.forEach((team) => {
+    team.update();
+  });
+}
+
+function restartGame() {
+  teams.forEach((team) => {
+    team.score = 0;
     team.update();
   });
 }

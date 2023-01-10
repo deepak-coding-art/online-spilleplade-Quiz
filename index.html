@@ -15,6 +15,10 @@
   </head>
   <body>
     <div class="container" id="container">
+      <div class="menu-buttons">
+        <button class="resetButton" onclick="restartGame()">Reset</button>
+        <button class="resetButton" onclick="newGame()">New</button>
+      </div>
       <div class="linear-page hideElement" id="linear-page">
         <div class="go-to-page go-to-hex" id="go-to-hex" onclick="goToHex()">
           <svg
@@ -189,23 +193,28 @@
           <div class="hex-track" id="hex-track">
             <div class="hex-block"></div>
             <div class="hex-block top-hex-move">
+              <div class="hexBoxImageCont" id="imgCont-1"></div>
               <svg
-                width="120.15148mm"
-                height="99.862328mm"
-                viewBox="0 0 120.15148 99.862328"
+                width="120.0992mm"
+                height="99.864807mm"
+                viewBox="0 0 120.0992 99.864808"
                 version="1.1"
-                id="hexBlock-9"
+                id="hexBlock-1"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:svg="http://www.w3.org/2000/svg"
               >
                 <defs id="defs848" />
-                <g id="layer1">
+                <g
+                  id="layer1"
+                  style="stroke-width: 5; stroke-dasharray: none"
+                  transform="matrix(0.96631714,0,0,0.96676187,2.0705676,1.5943122)"
+                >
                   <path
                     style="
-                      fill: #c56ef9;
+                      fill: #e35960ff;
                       fill-opacity: 1;
-                      stroke: #000000;
-                      stroke-width: 1.0235;
+                      stroke: #2f528f;
+                      stroke-width: 3.4186;
                       stroke-linecap: round;
                       stroke-dasharray: none;
                       stroke-opacity: 1;
@@ -217,11 +226,13 @@
                 </g>
               </svg>
             </div>
-            <div class="hex-block top-hex-move">
+            <div class="hex-block top-hex-move frist-last-block">
+              <div class="hex-box-first" id="imgCont-0"></div>
+              <div class="hex-box-last" id="imgCont-10"></div>
               <svg
-                width="118.98615mm"
-                height="99.93116mm"
-                viewBox="0 0 118.98614 99.93116"
+                width="121.35335mm"
+                height="101.92562mm"
+                viewBox="0 0 121.35333 101.92562"
                 version="1.1"
                 id="hexBlock-0"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -232,7 +243,7 @@
                   <pattern
                     xlink:href="#Checkerboard"
                     id="pattern262"
-                    patternTransform="matrix(10,0,0,10,-0.67697754,0)"
+                    patternTransform="matrix(10,0,0,10.082591,-0.67697754,-0.8167904)"
                   />
                   <pattern
                     patternUnits="userSpaceOnUse"
@@ -264,59 +275,95 @@
                     fill: none;
                     fill-opacity: 1;
                     stroke: none;
-                    stroke-width: 1.0235;
+                    stroke-width: 0.830089;
                     stroke-linecap: round;
                   "
                   id="rect408"
                   width="60.256401"
                   height="99.931168"
-                  x="58.729748"
-                  y="-4.5010353e-22"
+                  x="59.913342"
+                  y="0.98006141"
                 />
+                <g
+                  id="g35036"
+                  transform="matrix(0.98111234,0,0,0.98010605,2.3952458,2.4987175)"
+                >
+                  <path
+                    id="path4579"
+                    style="
+                      fill: url(#pattern262);
+                      fill-opacity: 1;
+                      stroke: #2f528f;
+                      stroke-width: 5.09887;
+                      stroke-linecap: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                    "
+                    d="M 29.96481,1.8148663e-7 0.52569126,49.447808 29.964299,98.895616 H 59.403418 V 1.8148663e-7 Z"
+                  />
+                  <path
+                    id="path4579-6"
+                    style="
+                      fill: #ffffff;
+                      fill-opacity: 1;
+                      stroke: #2f528f;
+                      stroke-width: 5.09887;
+                      stroke-linecap: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                    "
+                    d="M 88.842026,0 118.28114,49.447808 88.842537,98.895616 H 59.403418 V 0 Z"
+                  />
+                </g>
                 <path
-                  id="path4579"
                   style="
-                    fill: url(#pattern262);
-                    fill-opacity: 1;
+                    fill: #ed8b5a;
                     stroke: #000000;
-                    stroke-width: 1.0235;
-                    stroke-linecap: round;
+                    stroke-width: 5.11275;
+                    stroke-linecap: square;
+                    stroke-dasharray: none;
                     stroke-opacity: 1;
                   "
-                  d="M 29.96481,0.81009987 0.52569126,49.852858 29.964299,98.895616 H 59.403418 V 0.81009987 Z"
+                  d="M 60.67667,7.528559 V 94.39087"
+                  id="path39161"
                 />
                 <path
-                  id="path4579-6"
                   style="
-                    fill: #ffffff;
-                    fill-opacity: 1;
-                    stroke: #000000;
-                    stroke-width: 1.0235;
-                    stroke-linecap: round;
+                    fill: #ed8b5a;
+                    stroke: #ffffff;
+                    stroke-width: 4.90848;
+                    stroke-linecap: square;
+                    stroke-dasharray: none;
                     stroke-opacity: 1;
                   "
-                  d="M 88.842026,0.81009969 118.28114,49.852858 88.842537,98.895616 H 59.403418 V 0.81009969 Z"
+                  d="M 62.638579,7.4280151 V 94.490286"
+                  id="path39161-8"
                 />
               </svg>
             </div>
             <div class="hex-block top-hex-move">
+              <div class="hexBoxImageCont" id="imgCont-9"></div>
               <svg
-                width="120.15148mm"
-                height="99.862328mm"
-                viewBox="0 0 120.15148 99.862328"
+                width="120.0992mm"
+                height="99.864807mm"
+                viewBox="0 0 120.0992 99.864808"
                 version="1.1"
-                id="hexBlock-1"
+                id="hexBlock-9"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:svg="http://www.w3.org/2000/svg"
               >
                 <defs id="defs848" />
-                <g id="layer1">
+                <g
+                  id="layer1"
+                  style="stroke-width: 5; stroke-dasharray: none"
+                  transform="matrix(0.96631714,0,0,0.96676187,2.0705676,1.5943122)"
+                >
                   <path
                     style="
-                      fill: #ee4a5a;
+                      fill: #fbe156;
                       fill-opacity: 1;
-                      stroke: #000000;
-                      stroke-width: 1.0235;
+                      stroke: #2f528f;
+                      stroke-width: 3.4186;
                       stroke-linecap: round;
                       stroke-dasharray: none;
                       stroke-opacity: 1;
@@ -330,23 +377,28 @@
             </div>
             <div class="hex-block top-hex-move"></div>
             <div class="hex-block left-hex-move">
+              <div class="hexBoxImageCont" id="imgCont-2"></div>
               <svg
-                width="120.15148mm"
-                height="99.862328mm"
-                viewBox="0 0 120.15148 99.862328"
+                width="120.0992mm"
+                height="99.864807mm"
+                viewBox="0 0 120.0992 99.864808"
                 version="1.1"
-                id="hexBlock-8"
+                id="hexBlock-2"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:svg="http://www.w3.org/2000/svg"
               >
                 <defs id="defs848" />
-                <g id="layer1">
+                <g
+                  id="layer1"
+                  style="stroke-width: 5; stroke-dasharray: none"
+                  transform="matrix(0.96631714,0,0,0.96676187,2.0705676,1.5943122)"
+                >
                   <path
                     style="
-                      fill: #fadd2b;
+                      fill: #ed8b5aff;
                       fill-opacity: 1;
-                      stroke: #000000;
-                      stroke-width: 1.0235;
+                      stroke: #2f528f;
+                      stroke-width: 3.4186;
                       stroke-linecap: round;
                       stroke-dasharray: none;
                       stroke-opacity: 1;
@@ -362,23 +414,28 @@
             <div class="hex-block"></div>
             <div class="hex-block"></div>
             <div class="hex-block right-hex-move">
+              <div class="hexBoxImageCont" id="imgCont-8"></div>
               <svg
-                width="120.15148mm"
-                height="99.862328mm"
-                viewBox="0 0 120.15148 99.862328"
+                width="120.0992mm"
+                height="99.864807mm"
+                viewBox="0 0 120.0992 99.864808"
                 version="1.1"
-                id="hexBlock-2"
+                id="hexBlock-8"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:svg="http://www.w3.org/2000/svg"
               >
                 <defs id="defs848" />
-                <g id="layer1">
+                <g
+                  id="layer1"
+                  style="stroke-width: 5; stroke-dasharray: none"
+                  transform="matrix(0.96631714,0,0,0.96676187,2.0705676,1.5943122)"
+                >
                   <path
                     style="
-                      fill: #c56ef9;
+                      fill: #ed8b5aff;
                       fill-opacity: 1;
-                      stroke: #000000;
-                      stroke-width: 1.0235;
+                      stroke: #2f528f;
+                      stroke-width: 3.4186;
                       stroke-linecap: round;
                       stroke-dasharray: none;
                       stroke-opacity: 1;
@@ -391,23 +448,28 @@
               </svg>
             </div>
             <div class="hex-block left-hex-move">
+              <div class="hexBoxImageCont" id="imgCont-3"></div>
               <svg
-                width="120.15148mm"
-                height="99.862328mm"
-                viewBox="0 0 120.15148 99.862328"
+                width="120.0992mm"
+                height="99.864807mm"
+                viewBox="0 0 120.0992 99.864808"
                 version="1.1"
-                id="hexBlock-7"
+                id="hexBlock-3"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:svg="http://www.w3.org/2000/svg"
               >
                 <defs id="defs848" />
-                <g id="layer1">
+                <g
+                  id="layer1"
+                  style="stroke-width: 5; stroke-dasharray: none"
+                  transform="matrix(0.96631714,0,0,0.96676187,2.0705676,1.5943122)"
+                >
                   <path
                     style="
-                      fill: #8fc54e;
+                      fill: #fadd2b;
                       fill-opacity: 1;
-                      stroke: #000000;
-                      stroke-width: 1.0235;
+                      stroke: #2f528f;
+                      stroke-width: 3.4186;
                       stroke-linecap: round;
                       stroke-dasharray: none;
                       stroke-opacity: 1;
@@ -423,23 +485,28 @@
             <div class="hex-block"></div>
             <div class="hex-block"></div>
             <div class="hex-block right-hex-move">
+              <div class="hexBoxImageCont" id="imgCont-7"></div>
               <svg
-                width="120.15148mm"
-                height="99.862328mm"
-                viewBox="0 0 120.15148 99.862328"
+                width="120.0992mm"
+                height="99.864807mm"
+                viewBox="0 0 120.0992 99.864808"
                 version="1.1"
-                id="hexBlock-3"
+                id="hexBlock-7"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:svg="http://www.w3.org/2000/svg"
               >
                 <defs id="defs848" />
-                <g id="layer1">
+                <g
+                  id="layer1"
+                  style="stroke-width: 5; stroke-dasharray: none"
+                  transform="matrix(0.96631714,0,0,0.96676187,2.0705676,1.5943122)"
+                >
                   <path
                     style="
-                      fill: #8fc54e;
+                      fill: #e35960ff;
                       fill-opacity: 1;
-                      stroke: #000000;
-                      stroke-width: 1.0235;
+                      stroke: #2f528f;
+                      stroke-width: 3.4186;
                       stroke-linecap: round;
                       stroke-dasharray: none;
                       stroke-opacity: 1;
@@ -453,81 +520,96 @@
             </div>
             <div class="hex-block"></div>
             <div class="hex-block bottom-hex-move">
+              <div class="hexBoxImageCont" id="imgCont-4"></div>
               <svg
-                width="120.15148mm"
-                height="99.862328mm"
-                viewBox="0 0 120.15148 99.862328"
-                version="1.1"
-                id="hexBlock-6"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:svg="http://www.w3.org/2000/svg"
-              >
-                <defs id="defs848" />
-                <g id="layer1">
-                  <path
-                    style="
-                      fill: #f7864c;
-                      fill-opacity: 1;
-                      stroke: #000000;
-                      stroke-width: 1.0235;
-                      stroke-linecap: round;
-                      stroke-dasharray: none;
-                      stroke-opacity: 1;
-                    "
-                    id="path3208"
-                    d="M -1.0747899,-17.554884 38.521297,-18.067357 58.763156,15.967624 39.408927,50.515078 -0.18716033,51.027551 -20.429019,16.99257 Z"
-                    transform="matrix(1.49447,0.02463723,-0.03372345,1.4308316,31.911157,25.947535)"
-                  />
-                </g>
-              </svg>
-            </div>
-            <div class="hex-block bottom-hex-move">
-              <svg
-                width="120.15148mm"
-                height="99.862328mm"
-                viewBox="0 0 120.15148 99.862328"
-                version="1.1"
-                id="hexBlock-5"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:svg="http://www.w3.org/2000/svg"
-              >
-                <defs id="defs848" />
-                <g id="layer1">
-                  <path
-                    style="
-                      fill: #f2d32d;
-                      fill-opacity: 1;
-                      stroke: #000000;
-                      stroke-width: 1.0235;
-                      stroke-linecap: round;
-                      stroke-dasharray: none;
-                      stroke-opacity: 1;
-                    "
-                    id="path3208"
-                    d="M -1.0747899,-17.554884 38.521297,-18.067357 58.763156,15.967624 39.408927,50.515078 -0.18716033,51.027551 -20.429019,16.99257 Z"
-                    transform="matrix(1.49447,0.02463723,-0.03372345,1.4308316,31.911157,25.947535)"
-                  />
-                </g>
-              </svg>
-            </div>
-            <div class="hex-block bottom-hex-move">
-              <svg
-                width="120.15148mm"
-                height="99.862328mm"
-                viewBox="0 0 120.15148 99.862328"
+                width="120.0992mm"
+                height="99.864807mm"
+                viewBox="0 0 120.0992 99.864808"
                 version="1.1"
                 id="hexBlock-4"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:svg="http://www.w3.org/2000/svg"
               >
                 <defs id="defs848" />
-                <g id="layer1">
+                <g
+                  id="layer1"
+                  style="stroke-width: 5; stroke-dasharray: none"
+                  transform="matrix(0.96631714,0,0,0.96676187,2.0705676,1.5943122)"
+                >
                   <path
                     style="
-                      fill: #00b6f0;
+                      fill: #a0cd64ff;
                       fill-opacity: 1;
-                      stroke: #000000;
-                      stroke-width: 1.0235;
+                      stroke: #2f528f;
+                      stroke-width: 3.4186;
+                      stroke-linecap: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                    "
+                    id="path3208"
+                    d="M -1.0747899,-17.554884 38.521297,-18.067357 58.763156,15.967624 39.408927,50.515078 -0.18716033,51.027551 -20.429019,16.99257 Z"
+                    transform="matrix(1.49447,0.02463723,-0.03372345,1.4308316,31.911157,25.947535)"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="hex-block bottom-hex-move">
+              <div class="hexBoxImageCont" id="imgCont-5"></div>
+              <svg
+                width="120.0992mm"
+                height="99.864807mm"
+                viewBox="0 0 120.0992 99.864808"
+                version="1.1"
+                id="hexBlock-5"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs848" />
+                <g
+                  id="layer1"
+                  style="stroke-width: 5; stroke-dasharray: none"
+                  transform="matrix(0.96631714,0,0,0.96676187,2.0705676,1.5943122)"
+                >
+                  <path
+                    style="
+                      fill: #50b9f3ff;
+                      fill-opacity: 1;
+                      stroke: #2f528f;
+                      stroke-width: 3.4186;
+                      stroke-linecap: round;
+                      stroke-dasharray: none;
+                      stroke-opacity: 1;
+                    "
+                    id="path3208"
+                    d="M -1.0747899,-17.554884 38.521297,-18.067357 58.763156,15.967624 39.408927,50.515078 -0.18716033,51.027551 -20.429019,16.99257 Z"
+                    transform="matrix(1.49447,0.02463723,-0.03372345,1.4308316,31.911157,25.947535)"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div class="hex-block bottom-hex-move">
+              <div class="hexBoxImageCont" id="imgCont-6"></div>
+              <svg
+                width="120.0992mm"
+                height="99.864807mm"
+                viewBox="0 0 120.0992 99.864808"
+                version="1.1"
+                id="hexBlock-6"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg"
+              >
+                <defs id="defs848" />
+                <g
+                  id="layer1"
+                  style="stroke-width: 5; stroke-dasharray: none"
+                  transform="matrix(0.96631714,0,0,0.96676187,2.0705676,1.5943122)"
+                >
+                  <path
+                    style="
+                      fill: #bf78f7ff;
+                      fill-opacity: 1;
+                      stroke: #2f528f;
+                      stroke-width: 3.4186;
                       stroke-linecap: round;
                       stroke-dasharray: none;
                       stroke-opacity: 1;
