@@ -1,6 +1,6 @@
-const usedImages = [];
-const teams = [];
-const scores = [];
+let usedImages = [];
+let teams = [];
+let scores = [];
 let initial;
 
 class LinearTeam {
@@ -154,6 +154,7 @@ xmlns:svg="http://www.w3.org/2000/svg"
     this.addAvatarSvg = `<svg
     height="800"
     width="800"
+    class="add-button-svg"
     version="1.1"
     id="Layer_1"
     viewBox="0 0 512 512"
@@ -278,6 +279,10 @@ xmlns:svg="http://www.w3.org/2000/svg"
           "class",
           `linear-block linear-block-${this.number}-${i} linear-finish`
         );
+        const imageFlag = document.createElement("img");
+        imageFlag.setAttribute("class", "finish-flag");
+        imageFlag.setAttribute("src", "./assets/finish-bg.png");
+        block.appendChild(imageFlag);
       } else {
         block.setAttribute(
           "class",
@@ -295,7 +300,19 @@ xmlns:svg="http://www.w3.org/2000/svg"
     this.linearDelTem = document.createElement("div");
     this.linearDelTem.setAttribute("class", "del-element");
     this.linearDelTem.addEventListener("click", () => {
-      this.remove();
+      const confModal = document.getElementById("conformation-modal");
+      confModal.classList.remove("hideElement");
+      const confButtons = document.getElementById("confirm-buttons");
+      const confYes = document.createElement("button");
+      confYes.setAttribute("class", "confirm-yes");
+      confYes.setAttribute("id", "confirm-yes");
+      confYes.innerHTML = "Yes";
+      confButtons.insertBefore(confYes, confButtons.firstChild);
+      confYes.addEventListener("click", () => {
+        this.remove();
+        confButtons.removeChild(confButtons.firstElementChild);
+        confModal.classList.add("hideElement");
+      });
     });
     this.linearDelTem.innerHTML = "X";
     this.teamContainer.appendChild(this.linearDelTem);
@@ -352,11 +369,23 @@ xmlns:svg="http://www.w3.org/2000/svg"
 
     this.hexDelTem = document.createElement("div");
     this.hexDelTem.setAttribute("class", "del-element");
-    this.hexDelTem.addEventListener("click", () => {
-      this.remove();
-    });
     this.hexDelTem.innerHTML = "X";
     this.hexControlTeamCont.appendChild(this.hexDelTem);
+    this.hexDelTem.addEventListener("click", () => {
+      const confModal = document.getElementById("conformation-modal");
+      confModal.classList.remove("hideElement");
+      const confButtons = document.getElementById("confirm-buttons");
+      const confYes = document.createElement("button");
+      confYes.setAttribute("class", "confirm-yes");
+      confYes.setAttribute("id", "confirm-yes");
+      confYes.innerHTML = "Yes";
+      confButtons.insertBefore(confYes, confButtons.firstChild);
+      confYes.addEventListener("click", () => {
+        this.remove();
+        confButtons.removeChild(confButtons.firstElementChild);
+        confModal.classList.add("hideElement");
+      });
+    });
 
     containerHex.appendChild(this.hexControlTeamCont);
 
@@ -415,10 +444,6 @@ xmlns:svg="http://www.w3.org/2000/svg"
       const hex = document.getElementById(`hexBlock-${i}`);
       this.hexBlocks.push(hex);
     }
-  }
-
-  getOtherSameScores() {
-    // {TODO:}
   }
 
   addAvatar() {
@@ -621,18 +646,71 @@ function updateUi() {
 }
 
 function restartGame() {
-  teams.forEach((team) => {
-    team.score = 0;
-    team.update();
+  const confModal = document.getElementById("conformation-modal");
+  confModal.classList.remove("hideElement");
+  const confButtons = document.getElementById("confirm-buttons");
+  const confYes = document.createElement("button");
+  confYes.setAttribute("class", "confirm-yes");
+  confYes.setAttribute("id", "confirm-yes");
+  confYes.innerHTML = "Yes";
+  confButtons.insertBefore(confYes, confButtons.firstChild);
+  confYes.addEventListener("click", () => {
+    teams.forEach((team) => {
+      team.score = 0;
+      team.update();
+    });
+    confButtons.removeChild(confButtons.firstElementChild);
+    confModal.classList.add("hideElement");
   });
 }
 
 function newGame() {
+  const confModal = document.getElementById("conformation-modal");
+  confModal.classList.remove("hideElement");
+  const confButtons = document.getElementById("confirm-buttons");
+  const confYes = document.createElement("button");
+  confYes.setAttribute("class", "confirm-yes");
+  confYes.setAttribute("id", "confirm-yes");
+  confYes.innerHTML = "Yes";
+  confButtons.insertBefore(confYes, confButtons.firstChild);
+  confYes.addEventListener("click", () => {
+    newInit();
+    confButtons.removeChild(confButtons.firstElementChild);
+    confModal.classList.add("hideElement");
+  });
+}
+
+function newInit() {
+  usedImages = [];
+  teams = [];
+  scores = [];
   const instance = document.getElementById("container");
   instance.innerHTML = initial;
+
+  const confirmNo = document.getElementById("confirm-no");
+  confirmNo.addEventListener("click", () => {
+    const confirmCont = document.getElementById("conformation-modal");
+    confirmCont.classList.add("hideElement");
+    const confButtons = document.getElementById("confirm-buttons");
+    const confYes = document.getElementById("confirm-yes");
+    if (confYes) {
+      confButtons.removeChild(confYes);
+    }
+  });
 }
 
 window.addEventListener("load", () => {
   const instance = document.getElementById("container");
   initial = instance.innerHTML;
+
+  const confirmNo = document.getElementById("confirm-no");
+  confirmNo.addEventListener("click", () => {
+    const confirmCont = document.getElementById("conformation-modal");
+    confirmCont.classList.add("hideElement");
+    const confButtons = document.getElementById("confirm-buttons");
+    const confYes = document.getElementById("confirm-yes");
+    if (confYes) {
+      confButtons.removeChild(confYes);
+    }
+  });
 });

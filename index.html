@@ -19,6 +19,16 @@
         <button class="resetButton" onclick="restartGame()">Reset</button>
         <button class="resetButton" onclick="newGame()">New</button>
       </div>
+      <div class="conformation-modal hideElement" id="conformation-modal">
+        <div class="conformation-modal-bg">
+          <div class="conferm-cont">
+            <h1>Are you sure ?</h1>
+            <div class="confirm-buttons" id="confirm-buttons">
+              <button class="confirm-no" id="confirm-no">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="linear-page hideElement" id="linear-page">
         <div class="go-to-page go-to-hex" id="go-to-hex" onclick="goToHex()">
           <svg
@@ -96,6 +106,7 @@
           <svg
             height="800px"
             width="800px"
+            class="add-button-svg"
             version="1.1"
             id="Layer_1"
             viewBox="0 0 512 512"
@@ -629,6 +640,7 @@
               <svg
                 height="800px"
                 width="800px"
+                class="add-button-svg"
                 version="1.1"
                 id="Layer_1"
                 viewBox="0 0 512 512"

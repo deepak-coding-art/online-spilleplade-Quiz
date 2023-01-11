@@ -154,9 +154,11 @@ path {
   align-items: center;
   overflow: hidden;
   border-right: solid var(--border-size) var(--blue-outline);
-  background-image: url("./assets/finish-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+
+.finish-flag {
+  width: 100%;
+  height: 155%;
 }
 
 .linear-add-team {
@@ -169,11 +171,6 @@ path {
   margin: 0;
   font-size: 1rem;
   text-align: center;
-}
-
-.linear-finish {
-  background: url("./assets/finish-bg.png");
-  background-size: cover;
 }
 
 /* -------------------------------------------------------------- Hex Page -------------------------------------------------------------- */
@@ -298,7 +295,7 @@ path {
 }
 
 .controlsCont {
-  width: 30%;
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -351,6 +348,11 @@ path {
   justify-content: center;
   flex-direction: column;
   width: 30%;
+  text-align: center;
+}
+
+.add-button-svg {
+  width: 70%;
 }
 
 .hex-avatar-cont img {
@@ -370,7 +372,7 @@ path {
 
 .del-element {
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--red-text);
   padding-left: 1rem;
 }
@@ -475,7 +477,7 @@ path {
 
 .menu-buttons {
   position: fixed;
-  right: 10%;
+  right: 20%;
   bottom: 5%;
   z-index: 2;
   display: flex;
@@ -492,6 +494,55 @@ path {
   border-radius: 10px;
   width: 7ch;
   margin: 0.5rem;
+  cursor: pointer;
+}
+
+/* -------------- Confirm ---------------- */
+.conformation-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+}
+
+.conformation-modal-bg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--transparent-modal);
+}
+
+.conferm-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 40%;
+  height: 30%;
+  background-color: var(--white-bg);
+  border-radius: 10px;
+}
+
+.confirm-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.confirm-buttons button {
+  width: 5ch;
+  font-size: 2rem;
+  font-weight: bold;
+  border: solid 2px var(--blue-outline);
+  background-color: var(--button-color);
+  border-radius: 10px;
+  margin: 1rem;
+  cursor: pointer;
 }
 
 @media all and (max-width: 1000px) {
@@ -513,5 +564,10 @@ path {
   }
   .modal h1 {
     font-size: 1.5rem;
+  }
+
+  .conferm-cont {
+    width: 90%;
+    height: 30%;
   }
 }
