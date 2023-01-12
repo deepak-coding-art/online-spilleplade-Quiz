@@ -205,43 +205,78 @@ xmlns:svg="http://www.w3.org/2000/svg"
  </g>
     </svg>`;
     this.iWin = `<svg
-    width="205.60301mm"
-    height="158.03267mm"
-    viewBox="0 0 205.60301 158.03267"
+    width="207.41353mm"
+    height="112.50523mm"
+    viewBox="0 0 207.41353 112.50523"
     version="1.1"
     id="svg345"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:svg="http://www.w3.org/2000/svg">
    <defs
-      id="defs342" />
+      id="defs342">
+     <rect
+        x="176.17418"
+        y="110.10887"
+        width="491.1813"
+        height="194.36607"
+        id="rect947" />
+   </defs>
    <g
       id="layer1"
-      transform="translate(-2.0167132,-1.7644582)">
+      transform="translate(-0.66527356,-0.49337159)">
      <path
-        id="path3302"
-        style="fill:#ffffff;fill-opacity:1;stroke:#8ae9ff;stroke-width:3;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
-        d="m 108.03113,3.2948893 a 101.30118,60.415745 0 0 0 -6.86418,0.00879 A 101.30118,60.415745 0 0 0 3.5465535,65.132458 101.30118,60.415745 0 0 0 86.805554,123.11238 l 19.448426,33.68477 19.64996,-34.03513 a 101.30118,60.415745 0 0 0 80.21578,-59.081669 l -0.11679,-2.903699 A 101.30118,60.415745 0 0 0 108.03113,3.2948893 Z" />
+        id="path25595"
+        style="fill:#ffffff;fill-opacity:1;stroke:#8ae9ff;stroke-width:2.96677;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+        d="m 111.51842,2.0044235 a 92.153935,54.769224 0 0 1 6.24467,0.0078 A 92.153935,54.769224 0 0 1 206.56826,58.06259 92.153935,54.769224 0 0 1 113.33372,111.51117 92.153935,54.769224 0 0 1 27.1874,74.30958 L 3.6478599,62.43624 23.02167,49.95435 A 92.153935,54.769224 0 0 1 111.51842,2.0044235 Z" />
+     <text
+        xml:space="preserve"
+        transform="matrix(0.3089518,0,0,0.3089518,-15.356457,0.02114547)"
+        id="text945"
+        style="font-size:120px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;white-space:pre;shape-inside:url(#rect947);fill:#000000;stroke:#8ae9ff;stroke-width:11.3386;stroke-linecap:square"><tspan
+          x="208.4541"
+          y="218.19991"
+          id="tspan6712"><tspan
+            style="stroke:#000000"
+            id="tspan6710">I WON !</tspan></tspan></text>
+   </g>
+ </svg>
+ `;
+    this.iWinLinear = `<svg
+    width="207.41353mm"
+    height="112.5052mm"
+    viewBox="0 0 207.41353 112.5052"
+    version="1.1"
+    id="svg25394"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg">
+   <defs
+      id="defs25391">
+     <rect
+        x="176.17418"
+        y="110.10887"
+        width="491.1813"
+        height="194.36607"
+        id="rect947" />
+   </defs>
+   <g
+      id="layer1"
+      transform="translate(-2.0568164,-0.49080162)">
+     <path
+        id="path25595"
+        style="fill:#ffffff;fill-opacity:1;stroke:#8ae9ff;stroke-width:2.96677;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+        d="M 98.617187,2.0018687 A 92.153935,54.769224 0 0 0 92.372519,2.0096363 92.153935,54.769224 0 0 0 3.5673559,58.06 92.153935,54.769224 0 0 0 96.801889,111.50858 92.153935,54.769224 0 0 0 182.94821,74.30699 L 206.48775,62.433656 187.11394,49.951761 A 92.153935,54.769224 0 0 0 98.617187,2.0018687 Z" />
+     <text
+        xml:space="preserve"
+        transform="matrix(0.26458333,0,0,0.26458333,-13.67983,8.6132261)"
+        id="text945"
+        style="font-size:120px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;white-space:pre;shape-inside:url(#rect947);fill:#000000;stroke:#8ae9ff;stroke-width:11.3386;stroke-linecap:square"><tspan
+          x="208.4541"
+          y="218.19991"
+          id="tspan1141"><tspan
+            style="stroke:#000000"
+            id="tspan1139">I WON !</tspan></tspan></text>
    </g>
  </svg>`;
-    this.iWinLinear = `<svg
- width="207.41353mm"
- height="112.5052mm"
- viewBox="0 0 207.41353 112.5052"
- version="1.1"
- id="svg25394"
- xmlns="http://www.w3.org/2000/svg"
- xmlns:svg="http://www.w3.org/2000/svg">
-<defs
-   id="defs25391" />
-<g
-   id="layer1"
-   transform="translate(-2.0568164,-0.49080162)">
-  <path
-     id="path25595"
-     style="fill:#ffffff;fill-opacity:1;stroke:#8ae9ff;stroke-width:2.96677;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
-     d="M 98.617187,2.0018687 A 92.153935,54.769224 0 0 0 92.372519,2.0096363 92.153935,54.769224 0 0 0 3.5673559,58.06 92.153935,54.769224 0 0 0 96.801889,111.50858 92.153935,54.769224 0 0 0 182.94821,74.30699 L 206.48775,62.433656 187.11394,49.951761 A 92.153935,54.769224 0 0 0 98.617187,2.0018687 Z" />
-</g>
-</svg>`;
   }
 
   create(container, containerHex) {
@@ -436,12 +471,6 @@ xmlns:svg="http://www.w3.org/2000/svg"
     const avatarCont = document.getElementById(`imgCont-${this.score}`);
     this.hexAvatarMovableCont.appendChild(this.hexAvatarMovable);
     avatarCont.appendChild(this.hexAvatarMovableCont);
-    // const pos = this.hexBlocks[0].getBoundingClientRect();
-    // this.hexAvatarMovable.style.top = `${pos.top}px`;
-    // this.hexAvatarMovable.style.left = `${pos.left}px`;
-    // this.hexAvatarMovable.style.width = `${
-    //   pos.width / (this.otherScores.length + 1)
-    // }px`;
 
     // Event listeners
     this.rightMoveButton.addEventListener("click", () => {
@@ -558,11 +587,11 @@ xmlns:svg="http://www.w3.org/2000/svg"
     if (this.score >= this.maxSore) {
       const textHex = document.createElement("h1");
       textHex.setAttribute("class", "won-text-h1");
-      textHex.innerHTML = "I WON !";
+      textHex.innerHTML = "";
 
       const textLinear = document.createElement("h1");
       textLinear.setAttribute("class", "won-text-h1");
-      textLinear.innerHTML = "I WON !";
+      textLinear.innerHTML = "";
 
       const hexPos = this.hexAvatarMovable.getBoundingClientRect();
       const hexWon = document.createElement("div");

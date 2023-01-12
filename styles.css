@@ -401,7 +401,7 @@ path {
   -ms-animation: fadeout 5s;
 }
 .hex-won {
-  transform: translate(-30%, -100%);
+  transform: translate(40%, -30%);
 }
 .hex-won h1 {
   position: absolute;
