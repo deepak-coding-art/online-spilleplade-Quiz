@@ -210,7 +210,11 @@ path {
 .multi {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 30%;
+  row-gap: 15%;
+}
+
+.multi-2 img {
+  transform: translateY(-20%);
 }
 
 .single {

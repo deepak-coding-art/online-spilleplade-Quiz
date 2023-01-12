@@ -570,9 +570,16 @@ xmlns:svg="http://www.w3.org/2000/svg"
       const newAvatarCont = document.getElementById(`imgCont-${i}`);
       const numberOfChild = newAvatarCont.childElementCount;
       if (numberOfChild === 1) {
+        newAvatarCont.classList.remove("multi-2");
+
         newAvatarCont.classList.remove("multi");
         newAvatarCont.classList.add("single");
+      } else if (numberOfChild === 2) {
+        newAvatarCont.classList.remove("single");
+        newAvatarCont.classList.add("multi");
+        newAvatarCont.classList.add("multi-2");
       } else {
+        newAvatarCont.classList.remove("multi-2");
         newAvatarCont.classList.remove("single");
         newAvatarCont.classList.add("multi");
       }
