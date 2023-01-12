@@ -204,6 +204,44 @@ xmlns:svg="http://www.w3.org/2000/svg"
     id="path146" />
  </g>
     </svg>`;
+    this.iWin = `<svg
+    width="205.60301mm"
+    height="158.03267mm"
+    viewBox="0 0 205.60301 158.03267"
+    version="1.1"
+    id="svg345"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg">
+   <defs
+      id="defs342" />
+   <g
+      id="layer1"
+      transform="translate(-2.0167132,-1.7644582)">
+     <path
+        id="path3302"
+        style="fill:#ffffff;fill-opacity:1;stroke:#8ae9ff;stroke-width:3;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+        d="m 108.03113,3.2948893 a 101.30118,60.415745 0 0 0 -6.86418,0.00879 A 101.30118,60.415745 0 0 0 3.5465535,65.132458 101.30118,60.415745 0 0 0 86.805554,123.11238 l 19.448426,33.68477 19.64996,-34.03513 a 101.30118,60.415745 0 0 0 80.21578,-59.081669 l -0.11679,-2.903699 A 101.30118,60.415745 0 0 0 108.03113,3.2948893 Z" />
+   </g>
+ </svg>`;
+    this.iWinLinear = `<svg
+ width="207.41353mm"
+ height="112.5052mm"
+ viewBox="0 0 207.41353 112.5052"
+ version="1.1"
+ id="svg25394"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:svg="http://www.w3.org/2000/svg">
+<defs
+   id="defs25391" />
+<g
+   id="layer1"
+   transform="translate(-2.0568164,-0.49080162)">
+  <path
+     id="path25595"
+     style="fill:#ffffff;fill-opacity:1;stroke:#8ae9ff;stroke-width:2.96677;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+     d="M 98.617187,2.0018687 A 92.153935,54.769224 0 0 0 92.372519,2.0096363 92.153935,54.769224 0 0 0 3.5673559,58.06 92.153935,54.769224 0 0 0 96.801889,111.50858 92.153935,54.769224 0 0 0 182.94821,74.30699 L 206.48775,62.433656 187.11394,49.951761 A 92.153935,54.769224 0 0 0 98.617187,2.0018687 Z" />
+</g>
+</svg>`;
   }
 
   create(container, containerHex) {
@@ -499,12 +537,55 @@ xmlns:svg="http://www.w3.org/2000/svg"
     this.hexAvatarMovableCont.parentNode.removeChild(this.hexAvatarMovableCont);
     avatarCont.appendChild(this.hexAvatarMovableCont);
 
+    for (let i = 1; i < this.maxSore; i++) {
+      const newAvatarCont = document.getElementById(`imgCont-${i}`);
+      const numberOfChild = newAvatarCont.childElementCount;
+      if (numberOfChild === 1) {
+        newAvatarCont.classList.remove("multi");
+        newAvatarCont.classList.add("single");
+      } else {
+        newAvatarCont.classList.remove("single");
+        newAvatarCont.classList.add("multi");
+      }
+    }
     this.avatar.style.width = `${position.width * 0.9}px`;
     this.avatar.style.left = `${position.left + 10}px`;
     this.avatar.style.transform = `translateY(-20%)`;
 
     this.hexTeamName.innerHTML = this.name;
     this.teamName.innerHTML = this.name;
+
+    if (this.score >= this.maxSore) {
+      const textHex = document.createElement("h1");
+      textHex.setAttribute("class", "won-text-h1");
+      textHex.innerHTML = "I WON !";
+
+      const textLinear = document.createElement("h1");
+      textLinear.setAttribute("class", "won-text-h1");
+      textLinear.innerHTML = "I WON !";
+
+      const hexPos = this.hexAvatarMovable.getBoundingClientRect();
+      const hexWon = document.createElement("div");
+      hexWon.setAttribute("class", "won-text hex-won");
+      hexWon.innerHTML = this.iWin;
+      hexWon.appendChild(textHex);
+      hexWon.style.left = `${hexPos.left}px`;
+      hexWon.style.top = `${hexPos.top}px`;
+      this.hexControlTeamCont.appendChild(hexWon);
+
+      const linearPos = this.avatar.getBoundingClientRect();
+      const linearWon = document.createElement("div");
+      linearWon.setAttribute("class", "won-text linear-won");
+      linearWon.innerHTML = this.iWinLinear;
+      linearWon.appendChild(textLinear);
+      linearWon.style.left = `${linearPos.left}px`;
+      linearWon.style.top = `${linearPos.top}px`;
+      this.raceTrackContainer.appendChild(linearWon);
+      setTimeout(() => {
+        hexWon.parentNode.removeChild(hexWon);
+        linearWon.parentNode.removeChild(linearWon);
+      }, 5000);
+    }
   }
 
   chooseAvatar() {

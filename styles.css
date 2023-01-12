@@ -202,12 +202,25 @@ path {
 .hexBoxImageCont {
   /* background-color: #7c0000; */
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 30%;
   width: 100%;
   height: 100%;
   position: absolute;
+}
+
+.multi {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 30%;
+}
+
+.single {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.single img {
+  width: 60%;
+  transform: translate(40%, -10%);
 }
 
 .hex-avatar-movable-cont {
@@ -375,6 +388,82 @@ path {
   font-size: 1.5rem;
   color: var(--red-text);
   padding-left: 1rem;
+}
+
+.won-text {
+  position: absolute;
+  width: 15%;
+  z-index: 2;
+  animation: fadeout 5s;
+  -webkit-animation: fadeout 5s;
+  -moz-animation: fadeout 5s;
+  -o-animation: fadeout 5s;
+  -ms-animation: fadeout 5s;
+}
+.hex-won {
+  transform: translate(-30%, -100%);
+}
+.hex-won h1 {
+  position: absolute;
+  transform: translate(20%, -250%);
+}
+
+.linear-won {
+  transform: translate(-100%, 10%);
+}
+.linear-won h1 {
+  transform: translate(10%, -175%);
+}
+
+.won-text h1 {
+  padding: 0;
+  margin: 0;
+  z-index: 4;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* --- Change page --- */
