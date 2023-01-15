@@ -15,16 +15,22 @@
   </head>
   <body>
     <div class="container" id="container">
-      <div class="menu-buttons">
-        <button class="resetButton" onclick="restartGame()">Reset</button>
-        <button class="resetButton" onclick="newGame()">New</button>
+      <div class="menu-buttons" id="menu-buttons">
+        <button class="resetButton text-change-2" onclick="restartGame()">
+          Reset
+        </button>
+        <button class="resetButton text-change-3" onclick="newGame()">
+          New
+        </button>
       </div>
       <div class="conformation-modal hideElement" id="conformation-modal">
         <div class="conformation-modal-bg">
           <div class="conferm-cont">
-            <h1>Are you sure ?</h1>
+            <h1 class="text-change-10">Are you sure ?</h1>
             <div class="confirm-buttons" id="confirm-buttons">
-              <button class="confirm-no" id="confirm-no">No</button>
+              <button class="confirm-no text-change-9" id="confirm-no">
+                No
+              </button>
             </div>
           </div>
         </div>
@@ -162,7 +168,7 @@
               />
             </g>
           </svg>
-          <h1>Add new track/team/player</h1>
+          <h1 class="text-change-0">Add new track/team/player</h1>
         </div>
       </div>
       <div class="hex-page" id="hex-page">
@@ -696,7 +702,7 @@
                   />
                 </g>
               </svg>
-              <h1>Add new Team/player</h1>
+              <h1 class="text-change-1">Add new Team/player</h1>
             </div>
           </div>
         </div>

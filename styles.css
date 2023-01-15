@@ -638,6 +638,23 @@ path {
   cursor: pointer;
 }
 
+/* ---------- language ----------- */
+.language-icon {
+  border-radius: 50%;
+  width: 20%;
+  border: solid 4px #00000000;
+}
+
+.language-icon-active {
+  border: solid 4px var(--button-color);
+}
+
+.add-text-h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
 @media all and (max-width: 1000px) {
   .hex-team-cont {
     flex-direction: column;

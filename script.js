@@ -2,6 +2,44 @@ let usedImages = [];
 let teams = [];
 let scores = [];
 let initial;
+const languages = [
+  {
+    name: "english",
+    flag: "./assets/flags/english.png",
+    text: [
+      "Add new track/team/player",
+      "Add new Team/player",
+      "Reset",
+      "New",
+      "Add avatar",
+      "Yes",
+      "Choose Avatar",
+      "Ok",
+      "Add name",
+      "No",
+      "Are you sure ?",
+    ],
+  },
+  {
+    name: "danish",
+    flag: "./assets/flags/danish.png",
+    text: [
+      "Tilføj bane/hold/spiller",
+      "Tilføj hold/spiller",
+      "Nulstil",
+      "Ny",
+      "Tilføj figur",
+      "Ja",
+      "Vælg figur",
+      "Ok",
+      "Tilføj navn",
+      "nej",
+      "Er du sikker?",
+    ],
+  },
+];
+let activeLanguage = "english";
+let activeLanguageIndex = 0;
 
 class LinearTeam {
   constructor(name, number) {
@@ -204,79 +242,157 @@ xmlns:svg="http://www.w3.org/2000/svg"
     id="path146" />
  </g>
     </svg>`;
-    this.iWin = `<svg
-    width="207.41353mm"
-    height="112.50523mm"
-    viewBox="0 0 207.41353 112.50523"
-    version="1.1"
-    id="svg345"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:svg="http://www.w3.org/2000/svg">
-   <defs
-      id="defs342">
-     <rect
-        x="176.17418"
-        y="110.10887"
-        width="491.1813"
-        height="194.36607"
-        id="rect947" />
-   </defs>
-   <g
-      id="layer1"
-      transform="translate(-0.66527356,-0.49337159)">
-     <path
-        id="path25595"
-        style="fill:#ffffff;fill-opacity:1;stroke:#8ae9ff;stroke-width:2.96677;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
-        d="m 111.51842,2.0044235 a 92.153935,54.769224 0 0 1 6.24467,0.0078 A 92.153935,54.769224 0 0 1 206.56826,58.06259 92.153935,54.769224 0 0 1 113.33372,111.51117 92.153935,54.769224 0 0 1 27.1874,74.30958 L 3.6478599,62.43624 23.02167,49.95435 A 92.153935,54.769224 0 0 1 111.51842,2.0044235 Z" />
-     <text
-        xml:space="preserve"
-        transform="matrix(0.3089518,0,0,0.3089518,-15.356457,0.02114547)"
-        id="text945"
-        style="font-size:120px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;white-space:pre;shape-inside:url(#rect947);fill:#000000;stroke:#8ae9ff;stroke-width:11.3386;stroke-linecap:square"><tspan
-          x="208.4541"
-          y="218.19991"
-          id="tspan6712"><tspan
-            style="stroke:#000000"
-            id="tspan6710">I WON !</tspan></tspan></text>
-   </g>
- </svg>
- `;
-    this.iWinLinear = `<svg
-    width="207.41353mm"
-    height="112.5052mm"
-    viewBox="0 0 207.41353 112.5052"
-    version="1.1"
-    id="svg25394"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:svg="http://www.w3.org/2000/svg">
-   <defs
-      id="defs25391">
-     <rect
-        x="176.17418"
-        y="110.10887"
-        width="491.1813"
-        height="194.36607"
-        id="rect947" />
-   </defs>
-   <g
-      id="layer1"
-      transform="translate(-2.0568164,-0.49080162)">
-     <path
-        id="path25595"
-        style="fill:#ffffff;fill-opacity:1;stroke:#8ae9ff;stroke-width:2.96677;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
-        d="M 98.617187,2.0018687 A 92.153935,54.769224 0 0 0 92.372519,2.0096363 92.153935,54.769224 0 0 0 3.5673559,58.06 92.153935,54.769224 0 0 0 96.801889,111.50858 92.153935,54.769224 0 0 0 182.94821,74.30699 L 206.48775,62.433656 187.11394,49.951761 A 92.153935,54.769224 0 0 0 98.617187,2.0018687 Z" />
-     <text
-        xml:space="preserve"
-        transform="matrix(0.26458333,0,0,0.26458333,-13.67983,8.6132261)"
-        id="text945"
-        style="font-size:120px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;white-space:pre;shape-inside:url(#rect947);fill:#000000;stroke:#8ae9ff;stroke-width:11.3386;stroke-linecap:square"><tspan
-          x="208.4541"
-          y="218.19991"
-          id="tspan1141"><tspan
-            style="stroke:#000000"
-            id="tspan1139">I WON !</tspan></tspan></text>
-   </g>
- </svg>`;
+
+    this.iWin = {
+      english: `<svg
+  width="207.41353mm"
+  height="112.50523mm"
+  viewBox="0 0 207.41353 112.50523"
+  version="1.1"
+  id="svg345"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+ <defs
+    id="defs342">
+   <rect
+      x="176.17418"
+      y="110.10887"
+      width="491.1813"
+      height="194.36607"
+      id="rect947" />
+ </defs>
+ <g
+    id="layer1"
+    transform="translate(-0.66527356,-0.49337159)">
+   <path
+      id="path25595"
+      style="fill:#ffffff;fill-opacity:1;stroke:#8ae9ff;stroke-width:2.96677;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+      d="m 111.51842,2.0044235 a 92.153935,54.769224 0 0 1 6.24467,0.0078 A 92.153935,54.769224 0 0 1 206.56826,58.06259 92.153935,54.769224 0 0 1 113.33372,111.51117 92.153935,54.769224 0 0 1 27.1874,74.30958 L 3.6478599,62.43624 23.02167,49.95435 A 92.153935,54.769224 0 0 1 111.51842,2.0044235 Z" />
+   <text
+      xml:space="preserve"
+      transform="matrix(0.3089518,0,0,0.3089518,-15.356457,0.02114547)"
+      id="text945"
+      style="font-size:120px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;white-space:pre;shape-inside:url(#rect947);fill:#000000;stroke:#8ae9ff;stroke-width:11.3386;stroke-linecap:square"><tspan
+        x="208.4541"
+        y="218.19991"
+        id="tspan6712"><tspan
+          style="stroke:#000000"
+          id="tspan6710">I WON !</tspan></tspan></text>
+ </g>
+</svg>
+`,
+      danish: `<svg
+      width="207.41353mm"
+      height="112.50523mm"
+      viewBox="0 0 207.41353 112.50523"
+      version="1.1"
+      id="svg345"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:svg="http://www.w3.org/2000/svg">
+     <defs
+        id="defs342">
+       <rect
+          x="176.17418"
+          y="110.10887"
+          width="707.19843"
+          height="129.1983"
+          id="rect947-2" />
+     </defs>
+     <g
+        id="layer1"
+        transform="translate(-0.66527356,-0.49337159)">
+       <path
+          id="path25595"
+          style="fill:#ffffff;fill-opacity:1;stroke:#8ae9ff;stroke-width:2.96677;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+          d="m 111.51842,2.0044235 a 92.153935,54.769224 0 0 1 6.24467,0.0078 A 92.153935,54.769224 0 0 1 206.56826,58.06259 92.153935,54.769224 0 0 1 113.33372,111.51117 92.153935,54.769224 0 0 1 27.1874,74.30958 L 3.6478599,62.43624 23.02167,49.95435 A 92.153935,54.769224 0 0 1 111.51842,2.0044235 Z" />
+       <text
+          xml:space="preserve"
+          transform="matrix(0.27636066,0,0,0.27636066,-29.655751,9.7370512)"
+          id="text945"
+          style="font-size:94.3665px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:6.1928px;white-space:pre;shape-inside:url(#rect947-2);fill:#000000;stroke:#8ae9ff;stroke-width:11.3386;stroke-linecap:square"><tspan
+            x="240.13095"
+            y="196.20279"
+            id="tspan8850"><tspan
+              style="font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke:#000000"
+              id="tspan8848">jeg vandt !</tspan></tspan></text>
+     </g>
+   </svg>
+   `,
+    };
+    this.iWinLinear = {
+      english: `<svg
+  width="207.41353mm"
+  height="112.5052mm"
+  viewBox="0 0 207.41353 112.5052"
+  version="1.1"
+  id="svg25394"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+ <defs
+    id="defs25391">
+   <rect
+      x="176.17418"
+      y="110.10887"
+      width="491.1813"
+      height="194.36607"
+      id="rect947" />
+ </defs>
+ <g
+    id="layer1"
+    transform="translate(-2.0568164,-0.49080162)">
+   <path
+      id="path25595"
+      style="fill:#ffffff;fill-opacity:1;stroke:#8ae9ff;stroke-width:2.96677;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+      d="M 98.617187,2.0018687 A 92.153935,54.769224 0 0 0 92.372519,2.0096363 92.153935,54.769224 0 0 0 3.5673559,58.06 92.153935,54.769224 0 0 0 96.801889,111.50858 92.153935,54.769224 0 0 0 182.94821,74.30699 L 206.48775,62.433656 187.11394,49.951761 A 92.153935,54.769224 0 0 0 98.617187,2.0018687 Z" />
+   <text
+      xml:space="preserve"
+      transform="matrix(0.26458333,0,0,0.26458333,-13.67983,8.6132261)"
+      id="text945"
+      style="font-size:120px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;white-space:pre;shape-inside:url(#rect947);fill:#000000;stroke:#8ae9ff;stroke-width:11.3386;stroke-linecap:square"><tspan
+        x="208.4541"
+        y="218.19991"
+        id="tspan1141"><tspan
+          style="stroke:#000000"
+          id="tspan1139">I WON !</tspan></tspan></text>
+ </g>
+</svg>`,
+      danish: `<svg
+      width="207.41353mm"
+      height="112.5052mm"
+      viewBox="0 0 207.41353 112.5052"
+      version="1.1"
+      id="svg25394"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:svg="http://www.w3.org/2000/svg">
+     <defs
+        id="defs25391">
+       <rect
+          x="176.17418"
+          y="110.10887"
+          width="707.19843"
+          height="129.1983"
+          id="rect947" />
+     </defs>
+     <g
+        id="layer1"
+        transform="translate(-2.0568164,-0.49080162)">
+       <path
+          id="path25595"
+          style="fill:#ffffff;fill-opacity:1;stroke:#8ae9ff;stroke-width:2.96677;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+          d="M 98.617187,2.0018687 A 92.153935,54.769224 0 0 0 92.372519,2.0096363 92.153935,54.769224 0 0 0 3.5673559,58.06 92.153935,54.769224 0 0 0 96.801889,111.50858 92.153935,54.769224 0 0 0 182.94821,74.30699 L 206.48775,62.433656 187.11394,49.951761 A 92.153935,54.769224 0 0 0 98.617187,2.0018687 Z" />
+       <text
+          xml:space="preserve"
+          transform="matrix(0.27636066,0,0,0.27636066,-44.316305,9.7344711)"
+          id="text945"
+          style="font-size:94.3665px;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:6.1928px;white-space:pre;shape-inside:url(#rect947);fill:#000000;stroke:#8ae9ff;stroke-width:11.3386;stroke-linecap:square"><tspan
+            x="240.13095"
+            y="196.20279"
+            id="tspan9247"><tspan
+              style="font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke:#000000"
+              id="tspan9245">jeg vandt !</tspan></tspan></text>
+     </g>
+   </svg>`,
+    };
   }
 
   create(container, containerHex) {
@@ -293,6 +409,7 @@ xmlns:svg="http://www.w3.org/2000/svg"
     this.teamNameContainer.setAttribute("class", "linear-team-name");
     this.teamNameContainer.setAttribute("id", `team-name-${this.number}`);
     this.teamName = document.createElement("h1");
+    this.teamName.setAttribute("class", "text-change-8");
     this.teamName.innerHTML = this.name;
     this.teamName.setAttribute("contentEditable", "true");
     this.teamNameContainer.appendChild(this.teamName);
@@ -322,7 +439,11 @@ xmlns:svg="http://www.w3.org/2000/svg"
     this.addAvatarButton = document.createElement("div");
     this.addAvatarButton.setAttribute("class", "linear-add-button");
     this.addAvatarButton.setAttribute("id", `linear-add-button-${this.number}`);
-    this.addAvatarButton.innerHTML = `${this.addAvatarSvg} Add avatar`;
+    this.linearAddText = document.createElement("h4");
+    this.linearAddText.setAttribute("class", `add-text-h1 text-change-4`);
+    this.linearAddText.innerHTML = `${languages[activeLanguageIndex].text[4]}`;
+    this.addAvatarButton.innerHTML = `${this.addAvatarSvg}`;
+    this.addAvatarButton.appendChild(this.linearAddText);
     this.addAvatarButton.style.display = "flex";
     // Add to parent
     this.teamContainer.appendChild(this.addAvatarButton);
@@ -379,7 +500,7 @@ xmlns:svg="http://www.w3.org/2000/svg"
       const confYes = document.createElement("button");
       confYes.setAttribute("class", "confirm-yes");
       confYes.setAttribute("id", "confirm-yes");
-      confYes.innerHTML = "Yes";
+      confYes.innerHTML = languages[activeLanguageIndex].text[5];
       confButtons.insertBefore(confYes, confButtons.firstChild);
       confYes.addEventListener("click", () => {
         this.remove();
@@ -423,6 +544,7 @@ xmlns:svg="http://www.w3.org/2000/svg"
     this.hexTeamNameCont.setAttribute("class", "hex-teamName-cont");
     this.hexTeamNameCont.setAttribute("id", "hex-teamName-cont");
     this.hexTeamName = document.createElement("h1");
+    this.hexTeamName.setAttribute("class", "text-change-8");
     this.hexTeamName.innerHTML = this.name;
     this.hexTeamName.setAttribute("contentEditable", "true");
 
@@ -437,7 +559,11 @@ xmlns:svg="http://www.w3.org/2000/svg"
     // Img tag 🖼️
     this.hexAvatar = document.createElement("img");
     // Add to parent
-    this.hexAvatarContainer.innerHTML = `${this.addAvatarSvg} Add avatar`;
+    this.hexAvatarContainer.innerHTML = `${this.addAvatarSvg}`;
+    this.hexAddText = document.createElement("h4");
+    this.hexAddText.setAttribute("class", `add-text-h1 text-change-4`);
+    this.hexAddText.innerHTML = `${languages[activeLanguageIndex].text[4]}`;
+    this.hexAvatarContainer.appendChild(this.hexAddText);
     this.hexControlTeamCont.appendChild(this.hexAvatarContainer);
 
     this.hexDelTem = document.createElement("div");
@@ -451,7 +577,7 @@ xmlns:svg="http://www.w3.org/2000/svg"
       const confYes = document.createElement("button");
       confYes.setAttribute("class", "confirm-yes");
       confYes.setAttribute("id", "confirm-yes");
-      confYes.innerHTML = "Yes";
+      confYes.innerHTML = languages[activeLanguageIndex].text[5];
       confButtons.insertBefore(confYes, confButtons.firstChild);
       confYes.addEventListener("click", () => {
         this.remove();
@@ -603,7 +729,7 @@ xmlns:svg="http://www.w3.org/2000/svg"
       const hexPos = this.hexAvatarMovable.getBoundingClientRect();
       const hexWon = document.createElement("div");
       hexWon.setAttribute("class", "won-text hex-won");
-      hexWon.innerHTML = this.iWin;
+      hexWon.innerHTML = this.iWin[activeLanguage];
       hexWon.appendChild(textHex);
       hexWon.style.left = `${hexPos.left}px`;
       hexWon.style.top = `${hexPos.top}px`;
@@ -612,7 +738,7 @@ xmlns:svg="http://www.w3.org/2000/svg"
       const linearPos = this.avatar.getBoundingClientRect();
       const linearWon = document.createElement("div");
       linearWon.setAttribute("class", "won-text linear-won");
-      linearWon.innerHTML = this.iWinLinear;
+      linearWon.innerHTML = this.iWinLinear[activeLanguage];
       linearWon.appendChild(textLinear);
       linearWon.style.left = `${linearPos.left}px`;
       linearWon.style.top = `${linearPos.top}px`;
@@ -633,7 +759,7 @@ xmlns:svg="http://www.w3.org/2000/svg"
     modal.setAttribute("class", "modal");
     modal.setAttribute("id", "modal");
     const title = document.createElement("h1");
-    title.innerHTML = "Choose Avatar";
+    title.innerHTML = languages[activeLanguageIndex].text[6];
     modal.appendChild(title);
 
     const imageCont = document.createElement("div");
@@ -673,7 +799,7 @@ xmlns:svg="http://www.w3.org/2000/svg"
     modal.append(imageCont);
 
     const button = document.createElement("button");
-    button.innerHTML = "OK";
+    button.innerHTML = languages[activeLanguageIndex].text[7];
     button.addEventListener("click", () => {
       this.avatarUrl = `./assets/avatars/${this.activeImg}.png`;
       usedImages.push(this.activeImg);
@@ -725,7 +851,10 @@ function analysesScore() {
 }
 
 function createTeam() {
-  const team = new LinearTeam(`add name`, teams.length);
+  const team = new LinearTeam(
+    `${languages[activeLanguageIndex].text[8]}`,
+    teams.length
+  );
   const cont = document.getElementById("liner-page-cont");
   const hCont = document.getElementById("controls");
   team.create(cont, hCont);
@@ -769,7 +898,7 @@ function restartGame() {
   const confYes = document.createElement("button");
   confYes.setAttribute("class", "confirm-yes");
   confYes.setAttribute("id", "confirm-yes");
-  confYes.innerHTML = "Yes";
+  confYes.innerHTML = languages[activeLanguageIndex].text[5];
   confButtons.insertBefore(confYes, confButtons.firstChild);
   confYes.addEventListener("click", () => {
     teams.forEach((team) => {
@@ -788,12 +917,13 @@ function newGame() {
   const confYes = document.createElement("button");
   confYes.setAttribute("class", "confirm-yes");
   confYes.setAttribute("id", "confirm-yes");
-  confYes.innerHTML = "Yes";
+  confYes.innerHTML = languages[activeLanguageIndex].text[5];
   confButtons.insertBefore(confYes, confButtons.firstChild);
   confYes.addEventListener("click", () => {
     newInit();
     confButtons.removeChild(confButtons.firstElementChild);
     confModal.classList.add("hideElement");
+    createLanguageOption();
   });
 }
 
@@ -816,6 +946,76 @@ function newInit() {
   });
 }
 
+function createLanguageOption() {
+  const menu = document.getElementById("menu-buttons");
+  languages.forEach((language) => {
+    const languageIcon = document.createElement("img");
+    languageIcon.setAttribute("src", `${language.flag}`);
+    languageIcon.setAttribute("alt", `${language.name}`);
+    languageIcon.setAttribute("class", "language-icon");
+    languageIcon.setAttribute("id", `${language.name}`);
+    languageIcon.addEventListener("click", (e) => {
+      changeLanguage(e.target.id);
+      languages.forEach((lang) => {
+        const lan = document.getElementById(`${lang.name}`);
+        if (lang.name === e.target.id) {
+          lan.classList.add("language-icon-active");
+        } else {
+          lan.classList.remove("language-icon-active");
+        }
+      });
+    });
+    menu.appendChild(languageIcon);
+    if (language.name === activeLanguage) {
+      languageIcon.classList.add("language-icon-active");
+    }
+  });
+}
+
+function changeLanguage(languageName) {
+  let language;
+  languages.forEach((lang, index) => {
+    if (lang.name === languageName) {
+      language = lang;
+      activeLanguage = languageName;
+      activeLanguageIndex = index;
+    }
+  });
+
+  language.text.forEach((line, index) => {
+    const doc = document.getElementsByClassName(`text-change-${index}`);
+
+    if (doc) {
+      for (let i = 0; i <= doc.length - 1; i++) {
+        if (index === 8) {
+          if (activeLanguage === "english") {
+            if (doc[i].innerHTML === languages[1].text[8]) {
+              doc[i].innerHTML = line;
+            }
+          } else {
+            if (doc[i].innerHTML === languages[0].text[8]) {
+              doc[i].innerHTML = line;
+            }
+          }
+          teams.forEach((team) => {
+            if (activeLanguage === "english") {
+              if (team.name === languages[1].text[8]) {
+                team.name = line;
+              }
+            } else {
+              if (team.name === languages[0].text[8]) {
+                team.name = line;
+              }
+            }
+          });
+        } else {
+          doc[i].innerHTML = line;
+        }
+      }
+    }
+  });
+}
+
 window.addEventListener("load", () => {
   const instance = document.getElementById("container");
   initial = instance.innerHTML;
@@ -830,4 +1030,5 @@ window.addEventListener("load", () => {
       confButtons.removeChild(confYes);
     }
   });
+  createLanguageOption();
 });
