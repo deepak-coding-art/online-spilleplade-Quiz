@@ -4,23 +4,6 @@ let scores = [];
 let initial;
 const languages = [
   {
-    name: "english",
-    flag: "./assets/flags/english.png",
-    text: [
-      "Add new track/team/player",
-      "Add new Team/player",
-      "Reset",
-      "New",
-      "Add avatar",
-      "Yes",
-      "Choose Avatar",
-      "Ok",
-      "Add name",
-      "No",
-      "Are you sure ?",
-    ],
-  },
-  {
     name: "danish",
     flag: "./assets/flags/danish.png",
     text: [
@@ -37,8 +20,25 @@ const languages = [
       "Er du sikker?",
     ],
   },
+  {
+    name: "english",
+    flag: "./assets/flags/english.png",
+    text: [
+      "Add new track/team/player",
+      "Add new Team/player",
+      "Reset",
+      "New",
+      "Add avatar",
+      "Yes",
+      "Choose Avatar",
+      "Ok",
+      "Add name",
+      "No",
+      "Are you sure ?",
+    ],
+  },
 ];
-let activeLanguage = "english";
+let activeLanguage = "danish";
 let activeLanguageIndex = 0;
 
 class LinearTeam {
@@ -989,21 +989,21 @@ function changeLanguage(languageName) {
       for (let i = 0; i <= doc.length - 1; i++) {
         if (index === 8) {
           if (activeLanguage === "english") {
-            if (doc[i].innerHTML === languages[1].text[8]) {
+            if (doc[i].innerHTML === languages[0].text[8]) {
               doc[i].innerHTML = line;
             }
           } else {
-            if (doc[i].innerHTML === languages[0].text[8]) {
+            if (doc[i].innerHTML === languages[1].text[8]) {
               doc[i].innerHTML = line;
             }
           }
           teams.forEach((team) => {
             if (activeLanguage === "english") {
-              if (team.name === languages[1].text[8]) {
+              if (team.name === languages[0].text[8]) {
                 team.name = line;
               }
             } else {
-              if (team.name === languages[0].text[8]) {
+              if (team.name === languages[1].text[8]) {
                 team.name = line;
               }
             }
